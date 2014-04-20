@@ -3,6 +3,11 @@
   <head>
     <title>HTML5: Techniques for providing useful text alternatives</title>
     <meta charset='utf-8'>
+    <style>
+	code.block {color:#BF3400;padding: 10px;display:block;background:#EBEBEB;min-width:20em;max-width:60em;}
+        code.blockat {color:#BF3400;padding: 10px;display:block;background:#FFFFD0;min-width:20em;max-width:48em;}
+	mark {background-color:#FF9}
+	</style>
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
     <script class='remove'>
@@ -103,47 +108,47 @@
       <div>
         <p>In this example, a user is asked to pick her preferred color    from a list of three. Each color is given by an image, but for    users who cannot view the images,    the color names are included within the alt attributes of the images:</p>
         <p><img alt="The example HTML code as displayed in a browser. 3 links each containing a rectangular image:  1 is blue with the text 'blue', 2 red with the text 'red' and 3 is green with the text 'green'." src="http://www.w3.org/html/wg/drafts/html/master/images/buttons.png" height="45" width="274"></p>
-        <pre>&lt;ul&gt;    
-&lt;li&gt;&lt;a href="red.html"&gt;&lt;img src="red.jpeg" <strong>alt="Red"</strong>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;li&gt;&lt;a href="green.html"&gt;&lt;img src="green.jpeg" <strong>alt="Green"</strong>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;li&gt;&lt;a href="blue.html"&gt;&lt;img src="blue.jpeg" <strong>alt="Blue"</strong>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;/ul&gt;    </pre>
+        <pre><code class="block">&lt;ul&gt;    
+&lt;li&gt;&lt;a href="red.html"&gt;&lt;img src="red.jpeg" <mark>alt="Red"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
+&lt;li&gt;&lt;a href="green.html"&gt;&lt;img src="green.jpeg" <mark>alt="Green"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
+&lt;li&gt;&lt;a href="blue.html"&gt;&lt;img src="blue.jpeg" <mark>alt="Blue"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
+&lt;/ul&gt; </code>   </pre>
       </div>
       <div>
         <p>In this example, a link contains a logo. The link points to the W3C web site <strong>from an external site</strong>. The text alternative is    a brief description of the link target.</p>
         <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
-        <pre>&lt;a href="http://w3.org"&gt;    
-&lt;img src="images/w3c_home.png" width="72" height="48" <strong>alt="W3C web site"</strong>&gt;    
-&lt;/a&gt;    </pre>
+        <pre><code class="block">&lt;a href="http://w3.org"&gt;    
+&lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C web site"</mark>&gt;    
+&lt;/a&gt;    </code></pre>
       </div>
       <div>
         <p>This example is the same as the previous example, except that the <strong>link is on the W3C web site</strong>. The text alternative is    a brief description of the link target.</p>
         <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
-        <pre>&lt;a href="http://w3.org"&gt;    
-&lt;img src="images/w3c_home.png" width="72" height="48" <strong>alt="W3C home"</strong>&gt;    
-&lt;/a&gt;    </pre>
+        <pre><code class="block">&lt;a href="http://w3.org"&gt;    
+&lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C home"</mark>&gt;    
+&lt;/a&gt;  </code>  </pre>
         <p>Depending on the context in which an image of a logo   is used it could be appropriate to provide an indication, as part of the   text alternative, that the image is a <em>logo</em>. Refer to section <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#logos,-insignia,-flags,-or-emblems">4.7.1.1.19 Logos, insignia, flags, or emblems</a>.</p>
       </div>
       <div>
         <p>In this example, a link contains a print preview icon. The link points to a version of the page with a    print stylesheet applied. The text alternative is a brief description of the link target.</p>
         <p><img alt="Print preview icon used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/preview.png" height="30" width="32"></p>
-        <pre>&lt;a href="preview.html"&gt;    
-&lt;img src="images/preview.png" width="32" height="30" <strong>alt="Print preview."</strong>&gt;    
-&lt;/a&gt;    </pre>
+        <pre><code class="block">&lt;a href="preview.html"&gt;    
+&lt;img src="images/preview.png" width="32" height="30" <mark>alt="Print preview."</mark>&gt;    
+&lt;/a&gt;  </code>  </pre>
       </div>
       <div>
         <p>In this example, a button contains a search icon. The button submits a search form. The text alternative is a    brief description of what the button does.</p>
         <p><img alt="Search icon used as button content." src="http://www.w3.org/html/wg/drafts/html/master/images/search.png" height="29" width="74"></p>
-        <pre>&lt;button&gt;    
-&lt;img src="images/search.png" width="74" height="29" <strong>alt="Search"</strong>&gt;    
-&lt;/button&gt;    </pre>
+        <pre><code class="block">&lt;button&gt;    
+&lt;img src="images/search.png" width="74" height="29" <mark>alt="Search"</mark>&gt;    
+&lt;/button&gt;</code>    </pre>
       </div>
       <div>
         <p>In this example, a company logo for the <em>PIP Corporation</em> has been split into the following two images,    the first containing the word <em>PIP</em> and the second with the abbreviated word <em>CO</em>. The images are the    sole content of a link to the <em>PIPCO</em> home page. In this case a brief description of the link target is provided.    As the images are presented to the user as a single entity the text alternative <em>PIP CO home</em> is in the    alt attribute of the first image.</p>
         <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/html/wg/drafts/html/master/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/html/wg/drafts/html/master/images/co.gif" height="64" width="103"></p>
-        <pre>&lt;a href="pipco-home.html"&gt;    
-&lt;img src="pip.gif" <strong>alt="PIP CO home"</strong>&gt;&lt;img src="co.gif" <strong>alt=""</strong>&gt;    
-&lt;/a&gt;    </pre>
+        <pre><code class="block">&lt;a href="pipco-home.html"&gt;    
+&lt;img src="pip.gif" <mark>alt="PIP CO home"</mark>&gt;&lt;img src="co.gif" <mark>alt=""</mark>&gt;    
+&lt;/a&gt;    </code></pre>
       </div>
       </section><section>
       <h3 id="graphical-representations:-charts,-diagrams,-graphs,-maps,-illustrations">Graphical Representations: Charts, diagrams, graphs, maps, illustrations</h3>
@@ -151,13 +156,14 @@
       <div>
         <p>In the following example we have an image of a pie chart, with text in the alt attribute     representing the data shown in the pie chart:</p>
         <p><img alt="Browser Share: Internet Explorer 25%, Firefox 40%, Chrome 25%, Safari 6% and Opera 4%." src="http://www.w3.org/html/wg/drafts/html/master/images/browserShare.png" height="299" width="380"></p>
-        <pre>  &lt;img src="piechart.gif" <strong>alt="Pie chart: Browser Share - Internet Explorer 25%, Firefox 40%, Chrome 25%, Safari 6% and Opera 4%."</strong>&gt;    </pre>
+        <pre><code class="block">&lt;img src="piechart.gif" <mark>alt="Pie chart: Browser Share - Internet Explorer 25%, 
+Firefox 40%, Chrome 25%, Safari 6% and Opera 4%."</mark>&gt;</code>    </pre>
       </div>
       <div>
         <p>In the case where an image repeats the previous paragraph in graphical form. The alt attribute content labels the image.</p>
-        <pre> &lt;p&gt;According to a recent study Firefox has a 40% browser share, Internet Explorer has 25%, 
+        <pre><code class="block">&lt;p&gt;According to a recent study Firefox has a 40% browser share, Internet Explorer has 25%, 
 Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;   
-&lt;p&gt;&lt;img src="piechart.gif" <strong>alt="Pie chart representing the data in the previous paragraph."</strong>&gt;&lt;/p&gt;</pre>
+&lt;p&gt;&lt;img src="piechart.gif" <mark>alt="Pie chart representing the data in the previous paragraph."</mark>&gt;&lt;/p&gt;</code></pre>
         <p>It can be seen that when the image is not available, for example because the src attribute value is incorrect, the text alternative provides the user with a brief description of the image content:</p>
         <p><img alt="Representation of the code snippet above." src="http://www.w3.org/html/wg/drafts/html/master/images/brokenimg.png"></p>
       </div>
@@ -165,17 +171,17 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
       <div>
         <p>Here's an example of a flowchart image, with a short text alternative     included in the alt attribute, in this case the text alternative is a description of the link target     as the image is the sole content of a link. The link points to a description, within the same document, of the     process represented in the flowchart.</p>
         <p><img alt="Flowchart: Dealing with a broken lamp." src="http://www.w3.org/html/wg/drafts/html/master/images/flowchart.png" height="320" width="221"></p>
-        <pre><strong>&lt;a href="#desc"&gt;</strong>&lt;img src="flowchart.gif" <strong>alt="Flowchart: Dealing with a broken lamp."</strong>&gt;<strong>&lt;/a&gt;</strong>      
+        <pre><code class="block"><mark>&lt;a href="#desc"&gt;</mark>&lt;img src="flowchart.gif" <mark>alt="Flowchart: Dealing with a broken lamp."</mark>&gt;<mark>&lt;/a&gt;</mark>      
 ...      
 ...      
-&lt;div <strong>id="desc"</strong>&gt;    
-&lt;h2&gt;Dealing with a broken lamp&lt;/h2&gt;    <strong data-anolis-xref="">
-&lt;ol&gt;</strong>    <strong data-anolis-xref="">
-&lt;li&gt;</strong>Check if it's plugged in, if not, plug it in.<strong>&lt;/li&gt;</strong>    
-<strong data-anolis-xref="">&lt;li&gt;</strong>If it still doesn't work; check if the bulb is burned out. If it is, replace the bulb.<strong>&lt;/li&gt;</strong>    
-<strong data-anolis-xref="">&lt;li&gt;</strong>If it still doesn't work; buy a new lamp.<strong>&lt;/li&gt;</strong>    <strong data-anolis-xref="">
-&lt;/ol&gt;</strong>    
-&lt;/div&gt;</pre>
+&lt;div <mark>id="desc"</mark>&gt;    
+&lt;h2&gt;Dealing with a broken lamp&lt;/h2&gt;    <mark>
+&lt;ol&gt;</mark>    <mark>
+&lt;li&gt;</mark>Check if it's plugged in, if not, plug it in.<mark>&lt;/li&gt;</mark>    
+<mark data-anolis-xref="">&lt;li&gt;</mark>If it still doesn't work; check if the bulb is burned out. If it is, replace the bulb.<mark>&lt;/li&gt;</mark>    
+<mark data-anolis-xref="">&lt;li&gt;</mark>If it still doesn't work; buy a new lamp.<mark>&lt;/li&gt;</mark>    <mark data-anolis-xref="">
+&lt;/ol&gt;</mark>    
+&lt;/div&gt;</code></pre>
       </div>
       <div>
         <p>In this example, there is an image of a chart. It would be inappropriate to provide the information depicted in    the chart as a plain text alternative in an alt attribute as the information is a data set. Instead a     structured text alternative is provided below the image in the form of a data table using the data that is represented     in the chart image.</p>
@@ -218,7 +224,7 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
             </tr>
           </tbody>
         </table>
-        <pre>&lt;img src="rainchart.gif" <strong>alt="Bar chart: Average rainfall in millimetres by Country and Season."</strong>&gt;    
+        <pre><code class="block">&lt;img src="rainchart.gif" <mark>alt="Bar chart: Average rainfall in millimetres by Country and Season."</mark>&gt;    
 &lt;table&gt;    
 &lt;caption&gt;Rainfall in millimetres by Country and Season.&lt;/caption&gt;    
 &lt;tr&gt;&lt;td&gt;&lt;th scope="col"&gt;UK &lt;th scope="col"&gt;Japan&lt;th scope="col"&gt;Australia&lt;/tr&gt;    
@@ -226,7 +232,7 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
 &lt;tr&gt;&lt;th scope="row"&gt;Summer &lt;td&gt;4.5 (highest)&lt;td&gt;3.4&lt;td&gt;2 (lowest)&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Autumn &lt;td&gt;3.5 (highest) &lt;td&gt;1.8 &lt;td&gt;1.5 (lowest)&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Winter &lt;td&gt;1.5 (highest) &lt;td&gt;1.2 &lt;td&gt;1 lowest&lt;/tr&gt;    
-&lt;/table&gt;    </pre>
+&lt;/table&gt;    </code></pre>
       </div>
       </section><section>
       <h3 id="images-of-text">Images of text</h3>
@@ -234,26 +240,26 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
       <div>
         <p>This example shows an image of the text "Get Happy!" written in a fancy multi colored freehand style.     The image makes up the content of a heading. In this case the text alternative for the image is "Get Happy!".</p>
         <p><img alt="Get Happy!" src="http://www.w3.org/html/wg/drafts/html/master/images/text.png" height="77" width="275"></p>
-        <pre>&lt;h1&gt;&lt;img src="gethappy.gif" <strong>alt="Get Happy!"</strong>&gt;&lt;/h1&gt;</pre>
+        <pre><code class="block">&lt;h1&gt;&lt;img src="gethappy.gif" <mark>alt="Get Happy!"</mark>&gt;&lt;/h1&gt;</code></pre>
       </div>
       <div>
         <p>In this example we have an advertising image consisting of text,   the phrase "The BIG sale" is     repeated 3 times, each time the text gets smaller and fainter, the   last line reads "...ends Friday"     In the context of use, as an advertisement, it is recommended that   the image's text alternative only include the text "The BIG sale"     once as the repetition is for visual effect and the repetition of the   text for users who cannot view     the image is unnecessary and could be confusing.</p>
         <p><img alt="The big sale ...ends Friday." src="http://www.w3.org/html/wg/drafts/html/master/images/sale.png" height="190" width="400"></p>
-        <pre>  &lt;p&gt;&lt;img src="sale.gif" <strong>alt="The BIG sale ...ends Friday."</strong>&gt;&lt;/p&gt;    </pre>
+        <pre>  <code class="block">&lt;p&gt;&lt;img src="sale.gif" <mark>alt="The BIG sale ...ends Friday."</mark>&gt;&lt;/p&gt;</code>    </pre>
         <p>In situations where there is also a photo or other graphic along with the image of text,      ensure that the words in the image text are included in the text alternative, along with any other description      of the image that conveys meaning to users who can view the image, so the information is also      available to users who cannot view the image.</p>
       </div>
       <p>When an image is used to represent a character that cannot otherwise be represented in Unicode,    for example gaiji, itaiji, or new characters such as novel currency symbols, the text alternative    should be a more conventional way of writing the same thing, e.g. using the phonetic hiragana or    katakana to give the character's pronunciation.</p>
       <div>
         <p>In this example from 1997, a new-fangled currency symbol that looks like a curly E with two     bars in the middle instead of one is represented using an image. The alternative text gives the     character's pronunication.</p>
         <p>Only <img alt="euro " src="http://www.w3.org/html/wg/drafts/html/master/images/euro.png" height="18" width="21">5.99!</p>
-        <pre>&lt;p&gt;Only &lt;img src="euro.png" alt="euro "&gt;5.99!</pre>
+        <pre><code class="block">&lt;p&gt;Only &lt;img src="euro.png" alt="euro "&gt;5.99!</code></pre>
       </div>
       <p>An image should not be used if Unicode characters would serve an identical purpose. Only when    the text cannot be directly represented using Unicode, e.g. because of decorations or because the    character is not in the Unicode character set (as in the case of gaiji), would an image be    appropriate.</p>
       <p>If an author is tempted to use an image because their default system font does not    support a given character, then Web Fonts are a better solution than images.</p>
       <div>
         <p>An illuminated manuscript might use graphics for some of its letters. The text alternative in     such a situation is just the character that the image represents.</p>
         <p><img alt="O" src="http://www.w3.org/html/wg/drafts/html/master/images/fancyO.png" height="32" width="24">nce upon a time and a long long time ago...</p>
-        <pre>&lt;p&gt;&lt;img src="initials/fancyO.png" alt="O"&gt;nce upon a time and a long long time ago...</pre>
+        <pre><code class="block">&lt;p&gt;&lt;img src="initials/fancyO.png" alt="O"&gt;nce upon a time and a long long time ago...</code></pre>
       </div>
       </section><section>
       <h3 id="images-that-include-text">Images that include text</h3>
@@ -261,16 +267,16 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
       <div>
         <p>Consider an image containing  a pie chart and associated text. It is recommended wherever     possible to provide any associated text as text, not an image of text.     If this is not possible include the text in the text alternative along with the pertinent information    conveyed in the image.</p>
         <p><img alt="Figure 1. Distribution of Articles by Journal     Category. Pie chart: Language=68%, Education=14% and Science=18%." id="piechart" src="http://www.w3.org/html/wg/drafts/html/master/images/figure1.png" height="279" width="351"></p>
-        <pre>&lt;p&gt;&lt;img src="figure1.gif" <strong>alt="Figure 1. Distribution of Articles by Journal Category.     
-Pie chart: Language=68%, Education=14% and Science=18%."</strong>&gt;&lt;/p&gt;    </pre>
+        <pre><code class="block">&lt;p&gt;&lt;img src="figure1.gif" <mark>alt="Figure 1. Distribution of Articles by Journal Category.     
+Pie chart: Language=68%, Education=14% and Science=18%."</mark>&gt;&lt;/p&gt; </code>   </pre>
       </div>
       <div>
         <p>Here's another example of the same <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#piechart">pie chart</a> image,     showing a short text alternative included in the alt attribute     and a longer text alternative in text. The <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">figure</a> and <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> elements are used to associate the longer text alternative with the image. The alt attribute is used    to label the image.</p>
-        <pre>&lt;figure&gt;    
-&lt;img src="figure1.gif" <strong>alt="Figure 1"</strong>&gt;    
+        <pre><code class="block">&lt;figure&gt;    
+&lt;img src="figure1.gif" <mark>alt="Figure 1"</mark>&gt;    
 &lt;figcaption&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; Distribution of Articles by Journal Category.     
 Pie chart: Language=68%, Education=14% and Science=18%.&lt;/figcaption&gt;    
-&lt;/figure&gt;    </pre>
+&lt;/figure&gt;    </code></pre>
         <p>The advantage of this method over the previous example is that the text alternative     is available to all users at all times. It also allows structured mark up to be used in the text     alternative, where as a text alternative provided using the alt attribute does not.</p>
       </div>
       </section><section>
@@ -279,27 +285,27 @@ Pie chart: Language=68%, Education=14% and Science=18%.&lt;/figcaption&gt;
       <div>
         <p>Here is an example of an image closely related to the subject matter of the page content     but not directly discussed. An image of a painting inspired by a poem, on a page reciting that poem.     The following snippet shows an example. The image is a painting titled the "Lady of Shallot", it is     inspired by the poem and its subject matter is derived from the poem. Therefore it is strongly     recommended that a text alternative is provided. There is a short description of the content of     the image in the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute and    a link below the image to a longer description located at the bottom of the document. At the end     of the longer description there is also a link to further information about the painting.</p>
         <p><img alt="A painting inspired by Alfred Tennyson's poem The Lady of Shalott" src="http://www.w3.org/html/wg/drafts/html/master/images/shalott.jpg" height="234" width="338"></p>
-        <pre>  &lt;header&gt;
+        <pre><code class="block">&lt;header&gt;
 &lt;h1&gt;The Lady of Shalott&lt;/h1&gt;    
 &lt;p&gt;A poem by Alfred Lord Tennyson&lt;/p&gt;
 &lt;/header&gt;
-&lt;img src="shalott.jpeg" <strong>alt="Painting of a  young woman with long hair, sitting in a wooden boat. "</strong>&gt;
+&lt;img src="shalott.jpeg" <mark>alt="Painting of a  young woman with long hair, sitting in a wooden boat. "</mark>&gt;
 &lt;p&gt;&lt;a href="#des"&gt;Description of the painting&lt;/a&gt;.&lt;/p&gt;       
 &lt;!-- Full Recitation of Alfred, Lord Tennyson's Poem.  --&gt;      
 ...   
 ...    
 ...    
-&lt;p id="des"&gt;<strong>The woman in the painting is wearing a flowing white dress. A large piece of intricately     
-patterned fabric is draped over the side. In her right hand she holds the chain mooring the boat. Her expression     
-is mournful. She stares at a crucifix lying in front of her. Beside it are three candles. Two have blown out.</strong>     
-<strong>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further information about the painting&lt;/a&gt;.</strong>&lt;/p&gt;    </pre>
+&lt;p id="des"&gt;<mark>The woman in the painting is wearing a flowing white dress. A large piece of intricately     
+patterned fabric is draped over the side. In her right hand she holds the chain mooring the boat. 
+Her expression is mournful. She stares at a crucifix lying in front of her. Beside it are three candles. 
+Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further information about the painting&lt;/a&gt;.</mark>&lt;/p&gt;    </code></pre>
       </div>
       <div>
         <p>This example illustrates the provision of a text alternative identifying an image as a photo of the main subject of a page.</p>
         <img alt="Portrait photo(black and white) of Robin, accompanied by a heading 'Robin Berjon' and a question    'what more needs to be said?'" src="http://www.w3.org/html/wg/drafts/html/master/images/robin.png" height="138" width="354">
-        <pre>&lt;img src="orateur_robin_berjon.png" <strong>alt="Portrait photo(black and white) of Robin."</strong>&gt;
+        <pre><code class="block">&lt;img src="orateur_robin_berjon.png" <mark>alt="Portrait photo(black and white) of Robin."</mark>&gt;
 &lt;h1&gt;Robin Berjon&lt;/h1&gt;    
-&lt;p&gt;What more needs to be said?&lt;/p&gt;    </pre>
+&lt;p&gt;What more needs to be said?&lt;/p&gt;</code>    </pre>
       </div>
       </section><section>
       <h3 id="a-graphical-representation-of-some-of-the-surrounding-text">A graphical representation of some of the surrounding text</h3>
@@ -313,16 +319,16 @@ is mournful. She stares at a crucifix lying in front of her. Beside it are three
         <p><img alt="Painting of a woman in a white flowing dress, sitting in a small boat." src="http://www.w3.org/html/wg/drafts/html/master/images/shalott.jpg" height="171" width="271"></p>
         <p><a href="http://bit.ly/5HJvVZ">About this painting.</a></p>
         <p><em>Full recitation of Alfred, Lord Tennyson's poem.</em></p>
-        <pre>&lt;header&gt;
+        <pre><code class="block">&lt;header&gt;
 &lt;h1&gt;The Lady of Shalott&lt;/h1&gt;    
 &lt;p&gt;A poem by Alfred Lord Tennyson&lt;/p&gt;
 &lt;/header&gt;    
 &lt;figure&gt;
-&lt;img src="shalott.jpeg" <strong>alt="Painting of a woman in a white flowing dress, sitting in a small boat."</strong>&gt; 
-&lt;p&gt;&lt;a href="http://bit.ly/5HJvVZ"&gt;<strong>About this painting.</strong>&lt;/a&gt;&lt;/p&gt;    
+&lt;img src="shalott.jpeg" <mark>alt="Painting of a woman in a white flowing dress, sitting in a small boat."</mark>&gt; 
+&lt;p&gt;&lt;a href="http://bit.ly/5HJvVZ"&gt;<mark>About this painting.</mark>&lt;/a&gt;&lt;/p&gt;    
 &lt;/figure&gt;    
 
-&lt;!-- Full Recitation of Alfred, Lord Tennyson's Poem.  --&gt;    </pre>
+&lt;!-- Full Recitation of Alfred, Lord Tennyson's Poem.  --&gt;</code>    </pre>
       </div>
       </section><section>
       <h3 id="a-purely-decorative-image-that-doesn't-add-any-information">A purely decorative image that doesn't add any information</h3>
@@ -335,21 +341,21 @@ is mournful. She stares at a crucifix lying in front of her. Beside it are three
           <p><strong>Clara's Blog</strong></p>
           <p>Welcome to my blog...</p>
         </div>
-        <pre>&lt;header&gt;
-&lt;div&gt;&lt;img src="border.gif" <strong>alt=""</strong> width="400" height="30"&gt;&lt;/div&gt;
+        <pre><code class="block">&lt;header&gt;
+&lt;div&gt;&lt;img src="border.gif" <mark>alt=""</mark> width="400" height="30"&gt;&lt;/div&gt;
 &lt;h1&gt;Clara's Blog&lt;/h1&gt;
 &lt;/header&gt;    
 
-&lt;p&gt;Welcome to my blog...&lt;/p&gt;    </pre>
+&lt;p&gt;Welcome to my blog...&lt;/p&gt;  </code>  </pre>
       </div>
       </section><section>
       <h3 id="inline">Inline images</h3>
       <p>When images are used inline as part of the flow of text in a sentence, provide a word or phrase as a text     alternative which makes sense in the context of the sentence it is apart of.</p>
       <div>
         <p>I <img alt="love" src="http://www.w3.org/html/wg/drafts/html/master/images/heart.png" height="24" width="27"> you.</p>
-        <pre>I &lt;img src="heart.png" <strong>alt="love"</strong>&gt; you.</pre>
+        <pre><code class="block">I &lt;img src="heart.png" <mark>alt="love"</mark>&gt; you.</code></pre>
         <p>My <img alt="heart" src="http://www.w3.org/html/wg/drafts/html/master/images/heart.png" height="24" width="27"> breaks.</p>
-        <pre>My &lt;img src="heart.png" <strong>alt="heart"</strong>&gt; breaks.</pre>
+        <pre><code class="block">My &lt;img src="heart.png" <mark>alt="heart"</mark>&gt; breaks.</code></pre>
       </div>
       </section><section>
       <h3 id="a-group-of-images-that-form-a-single-larger-picture-with-no-links">A group of images that form a single larger picture with no links</h3>
@@ -357,18 +363,18 @@ is mournful. She stares at a crucifix lying in front of her. Beside it are three
       <div>
         <p>In this example, a picture representing a company logo for the <em>PIP Corporation</em> has been split into two pieces, the first containing the letters "PIP" and the second with the word "CO".    The text alternatve <em>PIP CO</em> is in the alt attribute of the first image.</p>
         <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/html/wg/drafts/html/master/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/html/wg/drafts/html/master/images/co.gif" height="64" width="103"></p>
-        <pre>  &lt;img src="pip.gif" <strong>alt="PIP CO"</strong>&gt;&lt;img src="co.gif" <strong>alt=""</strong>&gt;    </pre>
+        <pre><code class="block">&lt;img src="pip.gif" <mark>alt="PIP CO"</mark>&gt;&lt;img src="co.gif" <mark>alt=""</mark>&gt;</code>    </pre>
       </div>
       <div>
         <p>In the following example, a rating is shown as three filled    stars and two empty stars. While the text alternative could have    been "★★★☆☆", the author has    instead decided to more helpfully give the rating in the form "3    out of 5". That is the text alternative of the first image, and the    rest have empty alt attributes.</p>
         <p><img alt="3 out of 5." src="http://www.w3.org/html/wg/drafts/html/master/images/rating.png" height="30" width="149"></p>
-        <pre>&lt;p&gt;Rating: &lt;meter max=5 value=3&gt;
-&lt;img src="1" <strong>alt="3 out of 5"</strong>&gt;
-&lt;img src="1" <strong>alt=""</strong>&gt;
-&lt;img src="1" <strong>alt=""</strong>&gt;
-&lt;img src="0" <strong>alt=""</strong>&gt;
-&lt;img src="0" <strong>alt=""</strong>&gt;
-&lt;/meter&gt;&lt;/p&gt;    </pre>
+        <pre><code class="block">&lt;p&gt;Rating: &lt;meter max=5 value=3&gt;
+&lt;img src="1" <mark>alt="3 out of 5"</mark>&gt;
+&lt;img src="1" <mark>alt=""</mark>&gt;
+&lt;img src="1" <mark>alt=""</mark>&gt;
+&lt;img src="0" <mark>alt=""</mark>&gt;
+&lt;img src="0" <mark>alt=""</mark>&gt;
+&lt;/meter&gt;&lt;/p&gt;</code>    </pre>
       </div>
       </section><section>
   <h3 id="image-maps-0">Image maps</h3>
@@ -402,8 +408,8 @@ alt="Houses in South Katoomba" href="south.html"&gt;
 &lt;p&gt;You encounter a strange creature called a "crocoduck". The creature seems angry! 
 Perhaps some friendly stroking will help to calm it, but be careful not to stroke 
 any crocodile parts. This would just enrage the beast further.&lt;/p&gt;    
-&lt;a href="?stroke=head"&gt;&lt;img src="crocoduck1.png" <strong>alt="Stroke crocodile's angry, chomping head"</strong>&gt;&lt;/a&gt;
-&lt;a href="?stroke=body"&gt;&lt;img src="crocoduck2.png" <strong>alt="Stroke duck's soft, feathery body"</strong>&gt;&lt;/a&gt;      </pre>
+&lt;a href="?stroke=head"&gt;&lt;img src="crocoduck1.png" <mark>alt="Stroke crocodile's angry, chomping head"</mark>&gt;&lt;/a&gt;
+&lt;a href="?stroke=body"&gt;&lt;img src="crocoduck2.png" <mark>alt="Stroke duck's soft, feathery body"</mark>&gt;&lt;/a&gt;      </pre>
 </div>
 </section><section>
 <h3 id="images-of-pictures">Images of Pictures</h3>
@@ -414,7 +420,7 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
   <p><img alt="Lola the cat sitting under an umbrella in the bath tub." src="http://www.w3.org/html/wg/drafts/html/master/images/lola.png" height="242" width="300"></p>
   <p>Lola prefers a bath to a shower.</p>
   <pre>&lt;figure&gt;
-&lt;img src="664aef.jpg" <strong>alt="Lola the cat sitting under an umbrella in the bath tub."</strong>&gt;
+&lt;img src="664aef.jpg" <mark>alt="Lola the cat sitting under an umbrella in the bath tub."</mark>&gt;
 &lt;figcaption&gt;Lola prefers a bath to a shower.&lt;/figcaption&gt;
 &lt;/figure&gt;    </pre>
 </div>
@@ -423,7 +429,7 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
   <p><img alt="An abstract, freeform, vertically symmetrical, black inkblot on a light background." src="http://www.w3.org/html/wg/drafts/html/master/images/inkblot1.png" height="197" width="300"></p>
   <p>The first of the ten cards in the Rorschach test.</p>
   <pre>&lt;figure&gt;
-&lt;img src="Rorschach1.jpg" <strong>alt="An abstract, freeform, vertically symmetrical, black inkblot on a light background."</strong>&gt;
+&lt;img src="Rorschach1.jpg" <mark>alt="An abstract, freeform, vertically symmetrical, black inkblot on a light background."</mark>&gt;
 &lt;figcaption&gt;The first of the ten cards in the Rorschach test.&lt;/figcaption&gt;
 &lt;/figure&gt; </pre>
 </div>
@@ -437,9 +443,9 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
   <p>View from the top of Sopwith house, looking towards North Kingston. This image is updated every hour.</p>
   <p>View the <a href="http://news.bbc.co.uk/weather/forecast/4296?area=Kingston">latest weather details</a> for Kingston upon Thames.</p>
   <pre>&lt;figure&gt;    
-&lt;img src="webcam1.jpg" <strong>alt="Sopwith house weather cam. Taken on the 21/04/10 at 11:51 and 34 seconds.    
+&lt;img src="webcam1.jpg" <mark>alt="Sopwith house weather cam. Taken on the 21/04/10 at 11:51 and 34 seconds.    
 In the foreground are the safety rails on the flat part of the roof. Nearby there are low rise industrial buildings,    
-beyond are blocks of flats. In the distance there's a church steeple."</strong>&gt;    
+beyond are blocks of flats. In the distance there's a church steeple."</mark>&gt;    
 &lt;figcaption&gt;View from Sopwith house, looking towards north Kingston. This image is updated every hour.&lt;/figcaption&gt;    
 &lt;/figure&gt;    
 &lt;p&gt;View the &lt;a href="http://news.bbc.co.uk/weather/forecast/4296?area=Kingston"&gt;latest weather details&lt;/a&gt; 
@@ -459,10 +465,10 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 <div>
   <p>In this example, a person uploads a photo, as part of a bulk upoad   of many images, to a photo sharing site. The user has not    provided a text alternative or a caption for the image. The site's   authoring tool inserts a caption automatically using whatever useful    information it has for the image. In this case it's the file name and   date the photo was taken.</p>
   <p><img alt="no text alternative provided" src="http://www.w3.org/html/wg/drafts/html/master/images/clara.png" height="258" width="300"></p>
-  <p><strong>clara.jpg, taken on 12/11/2010.</strong></p>
+  <p><mark>clara.jpg, taken on 12/11/2010.</mark></p>
   <pre>&lt;figure&gt;    
 &lt;img src="clara.jpg"&gt;    
-&lt;figcaption&gt;<strong>clara.jpg, taken on 12/11/2010.</strong>&lt;/figcaption&gt;    
+&lt;figcaption&gt;<mark>clara.jpg, taken on 12/11/2010.</mark>&lt;/figcaption&gt;    
 &lt;/figure&gt;    </pre>
   <p>Notice that even in this example, as much useful information      as possible is still included in the <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> element.</p>
 </div>
@@ -472,7 +478,7 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
   <p><strong>Eloisa with Princess Belle</strong></p>
   <pre>&lt;figure&gt;    
 &lt;img src="elo.jpg"&gt;    
-&lt;figcaption&gt;<strong>Eloisa with Princess Belle</strong>&lt;/figcaption&gt;    
+&lt;figcaption&gt;<mark>Eloisa with Princess Belle</mark>&lt;/figcaption&gt;    
 &lt;/figure&gt;    </pre>
 </div>
 <div>
@@ -504,12 +510,12 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 <p>If an <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element is being used for purposes other    than showing an image, e.g. as part of a service to count page    views, use an empty <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute.</p>
 <div>
   <p>An example of an <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element used to collect web page statistics.    The alt attribute is empty as the image has no meaning.</p>
-  <pre>  &lt;img src="http://server3.stats.com/count.pl?NeonMeatDream.com" width="0" height="0" <strong>alt=""</strong>&gt;    </pre>
+  <pre>  &lt;img src="http://server3.stats.com/count.pl?NeonMeatDream.com" width="0" height="0" <mark>alt=""</mark>&gt;    </pre>
 </div>
 <p>It is recommended for the example use above the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-dim-width">width</a> and <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-dim-height">height</a> attributes  be set to zero.</p>
 <div>
   <p>Another example use is when an image such as a <em>spacer.gif</em> is used to aid positioning of content.     The alt attribute is empty as the image has no meaning.</p>
-  <pre>  &lt;img src="spacer.gif" width="10" height="10" <strong>alt=""</strong>&gt;    </pre>
+  <pre>  &lt;img src="spacer.gif" width="10" height="10" <mark>alt=""</mark>&gt;    </pre>
 </div>
 <p>It is recommended that that CSS be used to position content instead of <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> elements.</p>
 </section><section>
@@ -519,7 +525,7 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 <div>
   <p>In this example, we have a link pointing to a site's home page, the link contains a    house icon image and the text "home". The image has an empty alt text.    Where images are used in this way, it would also be appropriate to add the image using CSS</p>
   <p><img alt="A house icon next to the word 'home'." src="http://www.w3.org/html/wg/drafts/html/master/images/home.png" height="38" width="100"></p>
-  <pre>  &lt;a href="home.html"&gt;&lt;img src="home.gif" width="15" height="15" <strong>alt=""</strong>&gt;Home&lt;/a&gt;    </pre>
+  <pre>  &lt;a href="home.html"&gt;&lt;img src="home.gif" width="15" height="15" <mark>alt=""</mark>&gt;Home&lt;/a&gt;    </pre>
   <pre>  #home:before { content: url(home.png);}      
 
   &lt;a href="home.html" id="home"&gt;Home&lt;/a&gt;    </pre>
@@ -527,13 +533,13 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 <div>
   <p>In this example, there is a warning message, with a warning icon. The word "Warning!" is in emphasized    text next to the icon. As the information conveyed by the icon is redundant the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element is given an an empty alt attribute.</p>
   <p><img alt="Warning!" src="http://www.w3.org/html/wg/drafts/html/master/images/warning.png" height="34" width="38"><strong>Warning!</strong> Your session is about to expire.</p>
-  <pre>  &lt;p&gt;&lt;img src="warning.png" width="15" height="15" <strong>alt=""</strong>&gt;&lt;strong&gt;Warning!&lt;/strong&gt; Your session is about to expire&lt;/p&gt;    </pre>
+  <pre>  &lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt=""</mark>&gt;&lt;strong&gt;Warning!&lt;/strong&gt; Your session is about to expire&lt;/p&gt;    </pre>
 </div>
 <p>When an icon conveys additional information not available in text, provide a text alternative.</p>
 <div>
   <p>In this example, there is a warning message, with a warning icon. The icon emphasizes the    importance of the message and identifies it as a particular type of content.</p>
   <p><img alt="Warning!" src="http://www.w3.org/html/wg/drafts/html/master/images/warning.png" height="34" width="38"><strong>Your session is about to expire.</strong></p>
-  <pre>  &lt;p&gt;&lt;img src="warning.png" width="15" height="15" <strong>alt="Warning!"</strong>&gt; Your session is about to expire&lt;/p&gt;    </pre>
+  <pre>  &lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt="Warning!"</mark>&gt; Your session is about to expire&lt;/p&gt;    </pre>
 </div>
 </section><section>
 <h3 id="logos,-insignia,-flags,-or-emblems">Logos, insignia, flags, or emblems</h3>
@@ -542,28 +548,27 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 <div>
   <p>This example illustrates the use of the HTML5 logo as the sole content of a link to the HTML specification.</p>
   <p><a href="http://www.w3.org/html/wg/drafts/html/master/"> <img alt="HTML 5.1 Nightly specification" src="http://www.w3.org/html/wg/drafts/html/master/images/HTML5_Logo.png" height="128" width="128"></a></p>
-  <pre>  &lt;a href="http://dev.w3.org/html5/spec/spec.html"&gt;&lt;img src="HTML5_Logo.png" <strong>alt="HTML 5.1 specification"</strong>&gt;&lt;/a&gt;    </pre>
+  <pre>  &lt;a href="http://dev.w3.org/html5/spec/spec.html"&gt;&lt;img src="HTML5_Logo.png" <mark>alt="HTML 5.1 specification"</mark>&gt;&lt;/a&gt;    </pre>
 </div>
 <p>If a logo is being used to represent the entity, e.g. as a page heading, provide the name of the     entity being represented by the logo as the text alternative.</p>
 <div>
   <p>This example illustrates the use of the WebPlatform.org logo being used to represent itself.</p>
   <p><img alt="WebPlatform.org" src="http://www.w3.org/html/wg/drafts/html/master/images/logo-with-text.png" height="100" width="110"> and other developer resources</p>
-  <pre>  &lt;h2&gt;&lt;img src="images/webplatform.png" <strong>alt="WebPlatform.org"</strong>&gt; and other developer resources&lt;h2&gt;    </pre>
+  <pre>  &lt;h2&gt;&lt;img src="images/webplatform.png" <mark>alt="WebPlatform.org"</mark>&gt; and other developer resources&lt;h2&gt;    </pre>
   <p>The text alternative in the example above could also include the word "logo" to describe the type of image content.     If so, it is suggested that square brackets be used to delineate this information: alt="[logo] WebPlatform.org".</p>
 </div>
 <p>If a logo is being used next to the name of the what that it represents, then the logo is supplemental.     Include an empty alt attribute as the text alternative is already provided.</p>
 <div>
   <p>This example illustrates the use of a logo next to the name of the organization it represents.</p>
   <p><img alt="" src="http://www.w3.org/html/wg/drafts/html/master/images/webplatform.png" height="68" width="72"> WebPlatform.org</p>
-  <pre>  &lt;img src="images/webplatform1.png" <strong>alt=""</strong>&gt; WebPlatform.org    </pre>
+  <pre>  &lt;img src="images/webplatform1.png" <mark>alt=""</mark>&gt; WebPlatform.org    </pre>
 </div>
 <p>If the logo is used alongside text discussing the subject or entity the logo represents, then provide     a text alternative which describes the logo.</p>
 <div>
   <p>This example illustrates the use of a logo next to text discussing the subject the logo represents.</p>
   <p><img alt="HTML5 logo: Shaped like a shield with the     text 'HTML' above and the numeral '5' prominent on the face of the shield." src="http://www.w3.org/html/wg/drafts/html/master/images/HTML5_Logo.png" height="128" width="128"></p>
   <p><strong>HTML5</strong> is a language for structuring and presenting content for the World       Wide Web, a core technology of the Internet. It is the latest revision of the HTML standard      (originally created in 1990 and most recently standardized as HTML4 in 1997) and currently remains      under development. Its core aims have been to improve the language with support for the latest      multimedia while keeping it easily readable by humans and consistently understood by computers and      devices (web browsers, parsers etc.). </p>
-  <pre>  &lt;p&gt;&lt;img src="HTML5_Logo.png" <strong>alt="HTML5 logo: Shaped like a shield with the text 'HTML' above and the numeral '5' 
-  prominent on the face of the shield."</strong>&gt;&lt;/p&gt;  
+  <pre>  &lt;p&gt;&lt;img src="HTML5_Logo.png" <mark>alt="HTML5 logo: Shaped like a shield with the text 'HTML' above and the numeral '5' prominent on the face of the shield."</mark>&gt;&lt;/p&gt;  
 
   <em>Information about HTML5</em></pre>
 </div>
@@ -576,7 +581,7 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
   <p>This example shows a CAPTCHA test which uses a distorted image of text. The text alternative in the     alt attribute provides instructions for a user in the case where she cannot access the image content. </p>
   <p><img alt="captcha containing the words 'aides' and 'sprucest'. The letters are distorted and the color of the letters and background is partially inverted," src="http://www.w3.org/html/wg/drafts/html/master/images/captcha.png" height="60" width="270"></p>
   <p><strong>Example code:</strong></p>
-  <pre>&lt;img src="captcha.png" <strong>alt="If you cannot view this image an audio challenge is provided."</strong>&gt;    
+  <pre>&lt;img src="captcha.png" <mark>alt="If you cannot view this image an audio challenge is provided."</mark>&gt;    
  &lt;!-- audio CAPTCHA option that allows the user to listen and type the word --&gt;     
  &lt;!-- form that asks a question --&gt;    </pre>
 </div>
@@ -590,7 +595,7 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
     <H3 id="altmethod">The img element alt attribute</H3>
     <p>The primary method for providing text alternatives for images is by including text in the img element alt attribute.  In graphical   browsers the content of the alt attribute is typically displayed along with an indication (bordered area and/or an image icon) of the presence of an image when the image is not displayed, because the user has disabled image display or the image source information is incorrect. Assistive technologies such as screen readers will typically announce the presence of an image followed by the alt attribute content. Text based browsers  may display the alt attribute content  in brackets or in  different colored text or as the content of a link to the image or as text without any indication of the image or  prefixed with an indication of the image.</p>
     <p><STRONG>Example:</STRONG></p>
-    <PRE>&lt;img src="example.jpg" <STRONG>alt="text alternative."</STRONG>&gt;</PRE>
+    <PRE>&lt;img src="example.jpg" <mark>alt="text alternative."</mark>&gt;</PRE>
     <H5 id="hd">Advantages:</H5>
     <UL>
       <LI>Robust support in most graphical &amp; non graphical web browsers and assistive technologies.</LI>
@@ -652,17 +657,17 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
         <p><IMG width="400" height="310" alt="Shadow like figures and a graffiti tag drawn on the walls of a partially demolished building, illuminated by the light from a street lamp." src="http://dev.w3.org/html5/alt-techniques/images/shadows.jpg"></p>
       </DIV>
       <p><STRONG>Code example:</STRONG>:</p>
-      <PRE>&lt;img src="example.jpg" <STRONG>alt="Shadow like figures and a graffiti tag drawn on the walls of a partially   
-demolished building, illuminated by the light from a street lamp."</STRONG>&gt;</PRE>
+      <PRE><code class="block">&lt;img src="example.jpg" <mark>alt="Shadow like figures and a graffiti tag drawn on the walls of a partially   
+demolished building, illuminated by the light from a street lamp."</mark>&gt;</code></PRE>
       <p><STRONG>Example B: </STRONG></p>
       <DIV>
         <p><IMG width="400" height="310" alt="(photo)" src="http://dev.w3.org/html5/alt-techniques/images/shadows.jpg"></p>
-        <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a                 partially demolished building, illuminated by the light from a street lamp (photo). </STRONG></p>
+        <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a <br>
+        partially demolished building, illuminated by the light from a street lamp (photo). </STRONG></p>
       </DIV>
-      <p><STRONG>Code example:</STRONG></p>
-      <PRE>&lt;figure&gt;   <BR>&lt;img src="shadows.jpg"&gt;   <BR>&lt;figcaption&gt;<STRONG> Shadow like figures and a graffiti tag drawn on the walls of a        
-partially demolished building, illuminated by the light from a street lamp (photo). </STRONG>
-&lt;/figcaption&gt;   <BR>&lt;/figure&gt;</PRE>
+      <PRE><code class="block">&lt;figure&gt;   <BR>&lt;img src="shadows.jpg"&gt;   <BR>&lt;figcaption&gt;<mark> Shadow like figures and a graffiti tag drawn on the walls of a        
+partially demolished building, illuminated by the light from a street lamp (photo). </mark>
+&lt;/figcaption&gt;   <BR>&lt;/figure&gt;</code></PRE>
     </DIV>
     <H5 id="hg">Advantages:</H5>
     <UL>
@@ -677,11 +682,12 @@ partially demolished building, illuminated by the light from a street lamp (phot
       <p><STRONG>Example C: </STRONG></p>
       <DIV>
         <p><IMG width="400" height="310" alt="(photo 1)" src="http://dev.w3.org/html5/alt-techniques/images/shadows.jpg"></p>
-        <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a                 partially demolished building, illuminated by the light from a street lamp (photo 1). </STRONG></p>
+        <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a <br>
+        partially demolished building, illuminated by the light from a street lamp (photo 1). </STRONG></p>
       </DIV>
-      <p><STRONG>Code example:</STRONG></p>
-      <PRE>&lt;figure <STRONG>role="group"</STRONG>&gt;   <BR>&lt;img src="shadows.jpg" <STRONG>alt="photo 1"</STRONG>&gt;   <BR>&lt;figcaption&gt;<STRONG></STRONG>Shadow like figures and a graffiti tag drawn on the walls of a        
-partially demolished building, illuminated by the light from a street lamp <STRONG>(photo 1). </STRONG><BR>&lt;/figcaption&gt;   <BR>&lt;/figure&gt;</PRE>
+      <PRE><code class="block">&lt;figure <mark>role="group"</mark>&gt;   <BR>&lt;img src="shadows.jpg" <mark>alt="photo 1"</mark>&gt; 
+      &lt;figcaption&gt;]Shadow like figures and a graffiti tag drawn on the walls of a        
+partially demolished building, illuminated by the light from a street lamp <mark>(photo 1). </mark><BR>&lt;/figcaption&gt;   <BR>&lt;/figure&gt;</code></PRE>
     </DIV>
   
     <H4 id="nested">Using nested figure elements </H4>
@@ -736,7 +742,7 @@ partially demolished building, illuminated by the light from a street lamp <STRO
 <H3 id="hbt">Empty alt attribute or null alt attribute.</H3>
 <p>An alt attribute with no content:</p>
 <DIV>
-  <PRE>&lt;img src="null.gif" <STRONG>alt=""</STRONG>&gt;</PRE>
+  <PRE>&lt;img src="null.gif" <mark>alt=""</mark>&gt;</PRE>
 </DIV>
 <H3 id="hbu">Text alternative</H3>
 <p><A title="definition: text" href="http://www.w3.org/TR/WCAG20/#textdef">Text</A> that is   programmatically associated with <A title="definition: non-text content" href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text   content</A> or referred to from text that is programmatically associated with   non-text content. Programmatically associated text is text whose location can be <A href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-programmatically-determined-head">programmatically determined</A> from the non-text content.</p>
