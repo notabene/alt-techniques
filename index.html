@@ -7,6 +7,44 @@
 	code.block {color:#AC425C;padding: 1em;display:block;background:#F4F4F4;min-width:20em;max-width:60em;}
         code.blockat {color:#BF3400;padding: 10px;display:block;background:#FFFFD0;min-width:20em;max-width:48em;}
 	mark {background-color:#FF9}
+	}
+.note {
+    background: none repeat scroll 0 0 #E9FBE9;
+    border-color: #52E052;
+    border-left: 0.25em solid #52E052;
+}
+.warning {
+    background-color: #F9F0D4;
+    border: medium double #FF0000;
+    margin: 1em;
+    padding: 1em;
+}
+.note em, .warning em, .note i, .warning i {
+    font-style: normal;
+}
+p.note, div.note {
+    padding: 0.5em 2em;
+}
+span.note {
+    padding: 0 2em;
+}
+.note p:first-child, .warning p:first-child {
+    margin-top: 0;
+}
+.note p:last-child, .warning p:last-child {
+    margin-bottom: 0;
+}
+.warning:before {
+    font-style: normal;
+}
+p.note:before {
+    content: "Note: ";
+    font-weight: bolder;
+}
+p.warning:before {
+    content: "⚠Warning! ";
+    font-weight: bolder;
+}
 	</style>
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
@@ -128,7 +166,7 @@
         <pre><code class="block">&lt;a href="http://w3.org"&gt;    
 &lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C home"</mark>&gt;    
 &lt;/a&gt;  </code>  </pre>
-        <p>Depending on the context in which an image of a logo   is used it could be appropriate to provide an indication, as part of the   text alternative, that the image is a <em>logo</em>. Refer to section <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#logos,-insignia,-flags,-or-emblems">4.7.1.1.19 Logos, insignia, flags, or emblems</a>.</p>
+        <p>Depending on the context in which an image of a logo   is used it could be appropriate to provide an indication, as part of the   text alternative, that the image is a <em>logo</em>. Refer to section on<a href="#logos,-insignia,-flags,-or-emblems"> Logos, insignia, flags, or emblems</a>.</p>
       </div>
       <div>
         <p>In this example, a link contains a print preview icon. The link points to a version of the page with a    print stylesheet applied. The text alternative is a brief description of the link target.</p>
@@ -225,18 +263,23 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
             </tr>
           </tbody>
         </table>
-        <pre><code class="block">&lt;img src="rainchart.gif" <mark>alt="Bar chart: Average rainfall in millimetres by Country and Season."</mark>&gt;    
+        <pre><code class="block">
+&lt;figuer role=&quot;group&quot; aria-labelledby=&quot;caption&quot;&gt;
+&lt;img src="rainchart.gif" <mark>alt="Bar chart: Average rainfall in millimetres by Country and Season."</mark>&gt;    
 &lt;table&gt;    
-&lt;caption&gt;Rainfall in millimetres by Country and Season.&lt;/caption&gt;    
+&lt;caption id=&quot;caption&quot;&gt;Rainfall in millimetres by Country and Season.&lt;/caption&gt;    
 &lt;tr&gt;&lt;td&gt;&lt;th scope="col"&gt;UK &lt;th scope="col"&gt;Japan&lt;th scope="col"&gt;Australia&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Spring &lt;td&gt;5.5 (highest)&lt;td&gt;2.4 &lt;td&gt;2 (lowest)&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Summer &lt;td&gt;4.5 (highest)&lt;td&gt;3.4&lt;td&gt;2 (lowest)&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Autumn &lt;td&gt;3.5 (highest) &lt;td&gt;1.8 &lt;td&gt;1.5 (lowest)&lt;/tr&gt;    
 &lt;tr&gt;&lt;th scope="row"&gt;Winter &lt;td&gt;1.5 (highest) &lt;td&gt;1.2 &lt;td&gt;1 lowest&lt;/tr&gt;    
-&lt;/table&gt;    </code></pre>
+&lt;/table&gt;
+&lt;/figure&gt;    </code></pre>
       </div>
-      </section><section>
-      <h3 id="images-of-text">Images of text</h3>
+   <p class="note">The table image and data table are grouped using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element"><code>figure</code></a> element
+      with an ARIA <a href="http://www.w3.org/TR/wai-aria/roles#group"><code>role=&quot;group&quot;</code></a>. The 
+      <code>figure</code> is labelled by the table <code>caption</code> content using <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a>.   
+   <h3 id="images-of-text">Images of text</h3>
       <p>Sometimes, an image only contains  text, and the purpose of the image     is to display text  using visual effects and /or fonts.  It is <em>strongly</em> recommended that text styled using CSS be used, but if this is not possible, provide     the same text in the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute as is in the image.</p>
       <div>
         <p>This example shows an image of the text "Get Happy!" written in a fancy multi colored freehand style.     The image makes up the content of a heading. In this case the text alternative for the image is "Get Happy!".</p>
