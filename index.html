@@ -770,8 +770,22 @@ partially demolished building, illuminated by the light from a street lamp <mark
   <section id="secm7">
     <H3 id="hv">The img element title attribute</H3>
     <p>The title attribute <EM title="must not">must not</EM> be used to provide a text alternative for an image. The title attribute <EM title="must not">must not</EM> be used to provide a caption for an image; use the figure and figcaption elements to provide a caption, as described above.</p>
-</section>
-</section>
+    
+  </section>
+  </section>
+  <section>
+  <h2 id="gj">Notes on use of gaiji</h2>
+  <ul>
+    <li>When gaiji is used as a "hack" to display a character that is adequately represented by a real unicode character, the recommended practice is to remove the gaiji image and just use the unicode character.    
+    </li>
+    <li>When gaiji is used to display a character that is not available in a particular font, the alternative text should be the unicode character.     
+    </li>
+    <li>When gaiji is used to represent a graphical image similar to those displaying emoji, use a short description of the image's content (e.g. "thumbs up", "sunrise", or "smiling woman").    
+    </li>
+    <li>When gaiji is used to represent a new or made-up character that has no unicode representation, use the phonetic hiragana or katakana string to represent the pronunciation of the new or made-up character. </li>
+  </ul>
+ </section>
+
 <section><H2 id="glossary">Glossary</H2>
 <H3 id="api">Accessibility <ABBR title="Application Programming Interface">API</ABBR></H3>
 <p>Operating systems and other platforms provide a set of interfaces that expose information about <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_object">objects</A> and <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_event">events</A> to <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_at">assistive technologies</A>. Assistive technologies use these interfaces to get information about and interact with those <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_widget">widgets</A>. Examples of this are the <A href="http://java.sun.com/javase/technologies/accessibility/index.jsp">Java Accessibility <ABBR title="Application Programming Interface">API</ABBR></A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_JAPI">JAPI</A>], <A href="http://msdn.microsoft.com/en-us/library/ms697270%28VS.85%29.aspx">Microsoft Active Accessibility</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_MSAA">MSAA</A>], <A href="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Accessibility/cocoaAXIntro/cocoaAXintro.html">the Mac <ABBR title="OS Ten">OS X</ABBR> Accessibility Protocol</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_AXAPI">AXAPI</A>], the <A href="http://library.gnome.org/devel/atk/">Gnome Accessibility Toolkit (ATK)</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_ATK">ATK</A>], and <A href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_IA2">IA2</A>]. </p>
