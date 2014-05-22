@@ -278,7 +278,31 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
       </div>
    <p class="note">The table image and data table are grouped using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element"><code>figure</code></a> element
       with an ARIA <a href="http://www.w3.org/TR/wai-aria/roles#group"><code>role=&quot;group&quot;</code></a>. The 
-      <code>figure</code> is labelled by the table <code>caption</code> content using <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a>.   
+      <code>figure</code> is labelled by the table <code>caption</code> content using <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a>.
+  </div>
+  <p class="note">For any of the examples in this section the <code>details</code> and <code>summary</code> 
+  elements could be used so that the text descriptions for the images are only displayed on demand:</p>
+  
+  <div class="example">
+  <p><strong>Default (closed) view: </strong></p>
+  <p><img src="http://www.w3.org/html/wg/drafts/html/master/images/altdetails-collapsed.png" alt="Details element in the closed state."></p>
+  <p><strong>Expanded view (after control activated): </strong></p>
+  <p><img src="http://www.w3.org/html/wg/drafts/html/master/images/altdetails-expanded.png" alt="Details element in the open state with list content displayed."></p>
+  <pre>
+  &lt;figure>
+  &lt;img src="flowchart.gif" alt="Flowchart: Dealing with a broken lamp."&gt;
+  <strong title="">&lt;details&gt;</strong>
+  <strong>&lt;summary>Dealing with a broken lamp&lt;/summary&gt;</strong>
+  &lt;ol&gt;
+  lt;li&gt;Check if it's plugged in, if not, plug it in.&lt;/li&gt;
+  &lt;li&gt;If it still doesn't work; check if the bulb is burned out. If it is, replace the bulb.&lt;/li&gt;
+  &lt;li&gt;If it still doesn't work; buy a new lamp.&lt;/li&gt;
+  &lt;/ol&gt;
+  <strong data-x="">&lt;/details&gt;</strong>
+  &lt;/figure>
+  </pre>
+  
+  </div>   
    <h3 id="images-of-text">Images of text</h3>
       <p>Sometimes, an image only contains  text, and the purpose of the image     is to display text  using visual effects and /or fonts.  It is <em>strongly</em> recommended that text styled using CSS be used, but if this is not possible, provide     the same text in the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute as is in the image.</p>
       <div>
@@ -774,7 +798,7 @@ partially demolished building, illuminated by the light from a street lamp <mark
   </section>
   </section>
   <section>
-  <h2 id="gj">Notes on use of gaiji</h2>
+  <h2 id="gj">Notes on use of Gaiji</h2>
   <ul>
     <li>When gaiji is used as a "hack" to display a character that is adequately represented by a real unicode character, the recommended practice is to remove the gaiji image and just use the unicode character.    
     </li>
