@@ -130,7 +130,7 @@ div.example:before {
   <body>
     <section id='abstract'>
       <p>
-        This document contains best practice guidance for authors of HTML documents on providing text alternatives for images. 
+        This document contains best practice guidance for authors of HTML [<a href="#bib-HTML5">HTML5</a>] documents on providing text alternatives for images. 
       </p>
     </section>
     
@@ -141,7 +141,7 @@ div.example:before {
     
     <section>
       <h2 id="alt">Requirements for providing text to act as an alternative for images</h2>
-      <p><a href="http://www.w3.org/TR/WCAG20/#text-altdef">Text alternatives</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/references.html#refsWCAG">[WCAG]</a> are a primary way of making visual information accessible, because   they can be rendered through any    sensory modality (for example, visual, auditory or tactile) to match   the needs of the user. Providing text alternatives allows    the information to be rendered in a variety of ways by a variety of   user agents. For example, a person who cannot see a picture    can have the text alternative read aloud using synthesized speech.</p>
+      <p><a href="http://www.w3.org/TR/WCAG20/#text-altdef">Text alternatives</a>,[<a href="#bib-WCAG20">WCAG</a>] are a primary way of making visual information accessible, because   they can be rendered through any    sensory modality (for example, visual, auditory or tactile) to match   the needs of the user. Providing text alternatives allows    the information to be rendered in a variety of ways by a variety of   user agents. For example, a person who cannot see a picture    can have the text alternative read aloud using synthesized speech.</p>
       <p>The alt attribute on images is a very important accessibility attribute.    Authoring useful alt attribute content requires the author to carefully consider the context in     which the image appears and the function that image may have in that context. The guidance included     here addresses the most common ways authors use images. Additional guidance and techniques are available in <a href="http://w3.org/WAI/alt/">Resources on Alternative Text for Images</a>.</p>
      <section>
       <h3 id="examples-of-scenarios-where-users-benefit-from-text-alternatives-for-images"> Examples of scenarios where users benefit from text alternatives for images</h3>
@@ -295,7 +295,7 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
 &lt;/figure&gt;    </code></pre>
       </div>
    <p class="note">The table image and data table are grouped using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element"><code>figure</code></a> element
-      with an ARIA <a href="http://www.w3.org/TR/wai-aria/roles#group"><code>role=&quot;group&quot;</code></a>. The 
+      with an [<a href="#bib-ARIA">ARIA</a>] <a href="http://www.w3.org/TR/wai-aria/roles#group"><code>role=&quot;group&quot;</code></a>. The 
       <code>figure</code> is labelled by the table <code>caption</code> content using <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a>.
   </div>
   Once <code>figure</code> and <code>figcaption</code> are accessibility supported in browsers, the addition of ARIA attributes will not be required.<p class="note">For any of the examples in this section the <code>details</code> and <code>summary</code> 
@@ -500,8 +500,8 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
 </div>
 </section><section>
 <h3 id="images-of-pictures">Images of Pictures</h3>
-<p>Images of pictures or graphics include visual representations of objects, people, scenes, abstractions, etc.      This <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/references.html#refsWCAG">[WCAG]</a> can convey a significant amount of     information visually or provide a <a href="http://www.w3.org/TR/WCAG20/#sensoryexpdef">specific sensory experience</a>, <a href="http://www.w3.org/html/wg/drafts/html/master/references.html#refsWCAG">[WCAG]</a> to     a sighted person. Examples include photographs, paintings, drawings and artwork.</p>
-<p>An appropriate text alternative for a picture is a brief description, or <a href="http://www.w3.org/TR/WCAG20/#namedef">name</a> <a href="http://www.w3.org/html/wg/drafts/html/master/references.html#refsWCAG">[WCAG]</a>.   As in all text alternative authoring decisions, writing suitable text   alternatives for pictures requires     human judgment. The text value is subjective to the context where the   image is used and the page author's writing style. Therefore,     there is no single 'right' or 'correct' piece of alt text   for any particular image. In  addition to providing a short text     alternative that gives a brief description of the non-text content,   also providing supplemental content through another means when     appropriate may be useful.</p>
+<p>Images of pictures or graphics include visual representations of objects, people, scenes, abstractions, etc.      This <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a>,[<a href="#bib-WCAG20">WCAG</a>] can convey a significant amount of     information visually or provide a <a href="http://www.w3.org/TR/WCAG20/#sensoryexpdef">specific sensory experience</a>,[<a href="#bib-WCAG20">WCAG</a>] to     a sighted person. Examples include photographs, paintings, drawings and artwork.</p>
+<p>An appropriate text alternative for a picture is a brief description, or <a href="http://www.w3.org/TR/WCAG20/#namedef">name</a>[<a href="#bib-WCAG20">WCAG</a>].   As in all text alternative authoring decisions, writing suitable text   alternatives for pictures requires     human judgment. The text value is subjective to the context where the   image is used and the page author's writing style. Therefore,     there is no single 'right' or 'correct' piece of alt text   for any particular image. In  addition to providing a short text     alternative that gives a brief description of the non-text content,   also providing supplemental content through another means when     appropriate may be useful.</p>
 <div class="example">
   <p>This first example shows an image uploaded to a photo-sharing site. The photo is of a cat, sitting in the bath. The image has a     text alternative provided using the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element's alt attribute. It also has a caption provided by including     the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element in a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">figure</a> element and using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> element to identify the caption text.</p>
   <p><img alt="Lola the cat sitting under an umbrella in the bath tub." src="http://www.w3.org/html/wg/drafts/html/master/images/lola.png" height="242" width="300"></p>
@@ -631,7 +631,8 @@ for Kingston upon Thames.&lt;/p&gt;    </code></pre>
 <div class="example">
   <p>In this example, there is a warning message, with a warning icon. The icon emphasizes the    importance of the message and identifies it as a particular type of content.</p>
   <p><img alt="Warning!" src="http://www.w3.org/html/wg/drafts/html/master/images/warning.png" height="34" width="38"><strong>Your session is about to expire.</strong></p>
-  <pre><code class="block">&lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt="Warning!"</mark>&gt; Your session is about to expire&lt;/p&gt;</code></pre>
+  <pre><code class="block">&lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt="Warning!"</mark>&gt; 
+  Your session is about to expire&lt;/p&gt;</code></pre>
 </div>
 </section><section>
 <h3 id="logos,-insignia,-flags,-or-emblems">Logos, insignia, flags, or emblems</h3>
@@ -853,9 +854,21 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
 <p><A title="definition: text" href="http://www.w3.org/TR/WCAG20/#textdef">Text</A> that is   programmatically associated with <A title="definition: non-text content" href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text   content</A> or referred to from text that is programmatically associated with   non-text content. Programmatically associated text is text whose location can be <A href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-programmatically-determined-head">programmatically determined</A> from the non-text content.</p>
 </section>
     <section class='appendix'>
+    <h2>References</h2> 
+      <dl class="bibliography">
+        <dt id="bib-ARIA">[ARIA]</dt>
+        <dd>James Craig; et al. <a href="http://www.w3.org/WAI/PF/aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a></dd>
+        <dt id="bib-HTML5">[HTML5]</dt>
+        <dd>Robin Berjon; et al. <a href="http://www.w3.org/html/wg/drafts/html/master/"><cite>HTML 5.1</cite></a> 11 December 2008. W3C Recommendation.</dd>
+        <dt id="bib-WCAG20">[WCAG20]</dt>
+        <dd>Michael Cooper; et al. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211"><cite>Web Content Accessibility Guidelines (WCAG) 2.0.</cite></a> 11 December 2008. W3C Recommendation.</dd>    
+      </dl>
+      </section>
+      <section class='appendix'>
       <h2>Acknowledgements</h2>
       <p>
-      <em>Incomplete and in no particular order</em> - David MacDonald, Laura Carlson, Josh O Connor, Gez Lemon, Anne van Kesteren, Ian Hickson, Mike Smith, Mike Paciello, Bim Egan, Gregory Rosmaita, Michael Cooper, Janina Sajka, Matt May, Bevi Chagnon, Jonathan Avila, Pat Rees, Charlie Pike, Andy Maseyk, Rich Clark. </p>
+      <em>Incomplete and in no particular order</em> - Heydon Pickering, David MacDonald, Laura Carlson, Josh O Connor, Gez Lemon, Anne van Kesteren, Ian Hickson, Mike Smith, Mike Paciello, Bim Egan, Gregory Rosmaita, Michael Cooper, Janina Sajka, Matt May, Bevi Chagnon, Jonathan Avila, Pat Rees, Charlie Pike, Andy Maseyk, Rich Clark. </p>
     </section>
+    
   </body>
 </html>
