@@ -736,13 +736,13 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
         <LI>An image contains relevant information not available in the same document as text. Using an empty <code>alt</code> attribute hides an image from some users. In order to have the possibility of interrogating the image, the image must be discoverable.</LI>
         <LI>An image contains relevant information,  an alternative interpretation of which is available in the same document as structured text. Using an empty <code>alt</code> attribute hides an image from some users, which is incorrect. The image is not meaningless, it  contains information which a range of users could interpret with the  aid of the short text alternative and longer description. It also provides a text  alternative for users who have images turned off in their browsers, so  they can, if they wish, load and view the image. If an empty <code>alt</code> attribute is present  there may be no indication that an image is present. Furthermore if a description of an image is provided in a document, a <A href="/#hpa">programmatic association</A> between the image and the descriptive text is required. Using an empty <code>alt</code> attribute on the image effectively precludes the assigning of a programmatic association.</LI>
       </UL>
-
-    <DIV id="m5">
+ </section>
+    <section id="m5">
       <H4 id="he">How long should a  text alternative be?</H4>
       <p>The answer to this question very much depends on the context an image is being used in. While there are  <strong>no definitive right or wrong lengths</strong> for text alternatives provided using the img element's <code>alt</code> attribute or the <code>figcaption</code> element, the general consensus is that if the text alternative is longer 30-50 words (2 to 3 sentences), it should not be considered a short text alternative and should not be presented using the <code>alt</code> attribute or the <code>figcaption</code> element (in the case where it provides a text alternative for an image).</p>
       <p class="note">A text alternative provided using the <code>alt</code> attribute is exposed to screen reader users as a text string, generally announced as a chunk, and cannot be structured into paragraphs or have other markup added to aid comprehension.</p>
-    </DIV>
- </section>
+    </section>
+
     <section id="m6">
     <H3 id="hf">The figure and figcaption elements</H3>
     <p>The figure and figcaption elements provide a method to explicitly associate a caption with  a variety of content including images. Any content inside the figure element that is not contained within the figcaption element is labelled by the content of the figcaption element. The figcaption content may be an adjunct to the text alternative provided using the <code>alt</code> attribute:</p>
