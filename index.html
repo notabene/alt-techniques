@@ -224,7 +224,7 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
         <p>It can be seen that when the image is not available, for example because the src attribute value is incorrect, the text alternative provides the user with a brief description of the image content:</p>
         <p><img alt="Representation of the code snippet above." src="http://www.w3.org/html/wg/drafts/html/master/images/brokenimg.png"></p>
       </div>
-      <p>In cases where the text alternative is lengthy, more than a sentence or two, or would benefit from    the use of structured markup, provide a brief description or label using the alt    attribute, and an associated text alternative.</p>
+      <p>In cases where the text alternative is lengthy, more than a sentence or two, or would benefit from    the use of structured markup, provide a brief description or label using the <code>alt</code>    attribute, and an associated text alternative.</p>
       <div class="example">
         <p>Here's an example of a flowchart image, with a short text alternative     included in the <code>alt</code> attribute, in this case the text alternative is a description of the link target     as the image is the sole content of a link. The link points to a description, within the same document, of the     process represented in the flowchart.</p>
         <p><img alt="Flowchart: Dealing with a broken lamp." src="http://www.w3.org/html/wg/drafts/html/master/images/flowchart.png" height="320" width="221"></p>
@@ -419,7 +419,7 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
       </section><section>
       <h3 id="a-purely-decorative-image-that-doesn't-add-any-information">A purely decorative image that doesn't add any information</h3>
       <p>Purely decorative images are visual enhancements, decorations or embellishments that provide no     function or information beyond aesthetics to users who can view the images.</p>
-      <p>Mark up purely decorative images so they can be ignored by assistive technology by using an empty alt     attribute (alt=""). While it is not unacceptable to include decorative images inline,     it is recommended if they are purely decorative to include the image using CSS.</p>
+      <p>Mark up purely decorative images so they can be ignored by assistive technology by using an empty <code>alt</code>     attribute (alt=""). While it is not unacceptable to include decorative images inline,     it is recommended if they are purely decorative to include the image using CSS.</p>
       <div class="example">
         <p>Here's an example of an image being used as a decorative banner for a person's blog, the image offers no information     and so an empty <code>alt</code> attribute is used.</p>
         <div>
@@ -446,7 +446,7 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
       <p class="note">Unicode characters could be used as an alternative to inline images where appropriate. Modern browsers have support for characters like "♥" and "☺", and support the use of custom fonts to render those as colored image fonts, or an author can use image replacement techniques.</p>
       </section><section>
       <h3 id="a-group-of-images-that-form-a-single-larger-picture-with-no-links">A group of images that form a single larger picture with no links</h3>
-      <p>When a picture has been sliced into smaller image files that are then displayed    together to form the complete picture again, include a text alternative for one    of the images using the <code>alt</code> attribute as per the relevant relevant    guidance for the picture as a whole, and then include an empty alt    attribute on the other images.</p>
+      <p>When a picture has been sliced into smaller image files that are then displayed    together to form the complete picture again, include a text alternative for one    of the images using the <code>alt</code> attribute as per the relevant relevant    guidance for the picture as a whole, and then include an empty <code>alt</code>    attribute on the other images.</p>
       <div class="example">
         <p>In this example, a picture representing a company logo for the <em>PIP Corporation</em> has been split into two pieces, the first containing the letters "PIP" and the second with the word "CO".    The text alternative <em>PIP CO</em> is in the <code>alt</code> attribute of the first image.</p>
         <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/html/wg/drafts/html/master/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/html/wg/drafts/html/master/images/co.gif" height="64" width="103"></p>
@@ -614,7 +614,7 @@ for Kingston upon Thames.&lt;/p&gt;    </code></pre>
 <p>An icon is usually a simple picture representing a program, action, data file or a concept.     Icons are intended to help users of visual browsers to recognize features at a glance.</p>
 <p>Use an empty <code>alt</code> attribute when an icon is supplemental to    text conveying the same meaning.</p>
 <div class="example">
-  <p>In this example, we have a link pointing to a site's home page, the link contains a    house icon image and the text "home". The image has an empty alt text.    Where images are used in this way, it would also be appropriate to add the image using CSS</p>
+  <p>In this example, we have a link pointing to a site's home page, the link contains a    house icon image and the text "home". The image has an empty <code>alt</code> text.    Where images are used in this way, it would also be appropriate to add the image using CSS</p>
   <p><img alt="A house icon next to the word 'home'." src="http://www.w3.org/html/wg/drafts/html/master/images/home.png" height="38" width="100"></p>
   <pre><code class="block">&lt;a href="home.html"&gt;&lt;img src="home.gif" width="15" height="15" <mark>alt=""</mark>&gt;Home&lt;/a&gt; 
 
