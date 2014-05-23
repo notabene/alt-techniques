@@ -732,7 +732,7 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
       </UL>
       <p>Circumstances in which <STRONG>it is not</STRONG> appropriate to use an empty or null <code>alt</code> attribute:</p>
       <UL>
-        <LI>An image is contained within a figure element and has an associated caption provided using the figcaption element. Using an empty <code>alt</code> attribute hides an image from some users. If an image has a caption the image needs to be discoverable by users, otherwise a caption is present that refers to nothing for some users.</LI>
+        <LI>An image is contained within a <code>figure</code> element and has an associated caption provided using the <code>figcaption</code> element. Using an empty <code>alt</code> attribute hides an image from some users. If an image has a caption the image needs to be discoverable by users, otherwise a caption is present that refers to nothing for some users.</LI>
         <LI>An image contains relevant information not available in the same document as text. Using an empty <code>alt</code> attribute hides an image from some users. In order to have the possibility of interrogating the image, the image must be discoverable.</LI>
         <LI>An image contains relevant information,  an alternative interpretation of which is available in the same document as structured text. Using an empty <code>alt</code> attribute hides an image from some users, which is incorrect. The image is not meaningless, it  contains information which a range of users could interpret with the  aid of the short text alternative and longer description. It also provides a text  alternative for users who have images turned off in their browsers, so  they can, if they wish, load and view the image. If an empty <code>alt</code> attribute is present  there may be no indication that an image is present. Furthermore if a description of an image is provided in a document, a <A href="/#hpa">programmatic association</A> between the image and the descriptive text is required. Using an empty <code>alt</code> attribute on the image effectively precludes the assigning of a programmatic association.</LI>
       </UL>
@@ -741,15 +741,15 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
       <H4 id="he">How long should a  text alternative be?</H4>
       <p>A text alternative for an image should be as long as it needs to be to adequately convey the information in the image, in the context the image is being used. </p>
       <h5>How long should an <code>alt</code> text be?</h5>
-      <p>While there are <strong>no definitive right or wrong lengths</strong> for text alternatives provided using the img element's <code>alt</code> attribute, the general consensus is that if the text alternative is longer 30-50 words (2 to 3 sentences), it should not be considered a short text alternative and should not be presented using the <code>alt</code> attribute.</p>
+      <p>While there are <strong>no definitive right or wrong lengths</strong> for text alternatives provided using the img element's <code>alt</code> attribute, the general consensus is that if the text alternative is longer 30-50 words (2 to 3 sentences), it should not be considered a short text alternative and should not be presented using the <code>alt</code> attribute. Refer to the section - <a href="#graphical-representations-charts-diagrams-graphs-maps-illustrations">Graphical Representations: Charts, diagrams, graphs, maps, illustrations</a> for example methods of providing longer text alternatives for images.</p>
       <p class="note">A text alternative provided using the <code>alt</code> attribute is exposed to screen reader users as a text string, generally announced as a chunk, and cannot be structured into paragraphs or have other markup added to aid comprehension.</p>
     </section>
 
-    <section id="m6">
-    <H3 id="hf">The figure and figcaption elements</H3>
-    <p>The figure and figcaption elements provide a method to explicitly associate a caption with  a variety of content including images. Any content inside the figure element that is not contained within the figcaption element is labelled by the content of the figcaption element. The figcaption content may be an adjunct to the text alternative provided using the <code>alt</code> attribute:</p>
+  <section id="m6">
+    <H3 id="hf">The <code>figure</code> and <code>figcaption</code> elements</H3>
+    <p>The <code>figure</code> and <code>figcaption</code> elements provide a method to explicitly associate a caption with  a variety of content including images. Any content inside the <code>figure</code> element that is not contained within the <code>figcaption</code> element is labelled by the content of the <code>figcaption</code> element. The <code>figcaption</code> content may be an adjunct to the text alternative provided using the <code>alt</code> attribute:</p>
     <DIV class="example">
-      <p>The figcaption content may be a text alternative for the image, obviating the need for a text alternative provided using the <code>alt</code> attribute. This would only be the case if the figcaption content provides an adequate text alternative for the visual content in the image:      </p>
+      <p>The <code>figcaption</code> content may be a text alternative for the image, obviating the need for a text alternative provided using the <code>alt</code> attribute. This would only be the case if the <code>figcaption</code> content provides an adequate text alternative for the visual content in the image:      </p>
       <DIV>
         <p><IMG width="400" height="310" alt="Shadow like figures and a graffiti tag drawn on the walls of a partially demolished building, illuminated by the light from a street lamp." src="http://dev.w3.org/html5/alt-techniques/images/shadows.jpg"></p>
       </DIV>
@@ -774,7 +774,7 @@ partially demolished building, illuminated by the light from a street lamp (phot
       <LI>The <code>figure</code> and <code>figcaption</code> elements are not currently accessibility supported by the majority of browsers. </LI>
     </UL>
     <DIV class="example">
-      <p>Until the <code>figure</code> and <code>figcaption</code> elements are widely accessibility supported by browsers and/or assistive technology it is recommended that <code>role="group"</code> be used on the figure element and in the case where the <code>figcaption</code> content is the text alternative,  provide a label for the image in the <code>alt</code> attribute. These recommendations are illustrated in following example: </p>
+      <p>Until the <code>figure</code> and <code>figcaption</code> elements are widely accessibility supported by browsers and/or assistive technology it is recommended that <code>role="group"</code> be used on the <code>figure</code> element and in the case where the <code>figcaption</code> content is the text alternative,  provide a label for the image in the <code>alt</code> attribute. These recommendations are illustrated in following example: </p>
       <DIV>
         <p><IMG width="400" height="310" alt="(photo 1)" src="http://dev.w3.org/html5/alt-techniques/images/shadows.jpg"></p>
         <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a <br>
@@ -788,8 +788,8 @@ partially demolished building, illuminated by the light from a street lamp (phot
      &lt;/figure&gt;</code></PRE>
     </DIV>
   
-    <H4 id="nested">Using nested figure elements </H4>
-  <p>In cases where there is a group of related images each having an associated caption, it is recommended that nested figure and figcaption elements be used.    </p>
+    <H4 id="nested">Using nested <code>figure</code> elements </H4>
+  <p>In cases where there is a group of related images each having an associated caption, it is recommended that nested <code>figure</code> and <code>figcaption</code> elements be used.    </p>
   <DIV class="example">
       <p>The castle through the ages: 1423, 1756, and 1966 respectively.</p>
       <p><IMG width="350" height="259" alt="The castle has one tower, and a tall wall around it." src="http://dev.w3.org/html5/alt-techniques/images/castle-etching.jpg" border="0"> </p>
@@ -819,7 +819,7 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
   </section>
   <section id="secm7">
     <H3 id="hv">The img element title attribute</H3>
-    <p>The title attribute <EM title="must not">must not</EM> be used to provide a text alternative for an image. The title attribute <EM title="must not">must not</EM> be used to provide a caption for an image; use the figure and figcaption elements to provide a caption, as described above.</p>
+    <p>The title attribute <EM title="must not">must not</EM> be used to provide a text alternative for an image. The title attribute <EM title="must not">must not</EM> be used to provide a caption for an image; use the <code>figure</code> and <code>figcaption</code> elements to provide a caption, as described above.</p>
     
   </section>
   </section>
