@@ -164,13 +164,16 @@ code {color:#900 !important}
       <h3 id="a-link-or-button-containing-nothing-but-an-image">A link or button containing nothing but an image</h3>
       <p>When an <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-a-element">a</a> element that is a <a href="http://www.w3.org/html/wg/drafts/html/master/links.html#hyperlink">hyperlink</a>, or a <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element">button</a> element, has no text content   but contains one or more images, include text in the <code>alt</code> attribute(s) that together convey the purpose of the link or button.</p>
       <div class="example">
-        <p>In this example, a user is asked to pick her preferred color    from a list of three. Each color is given by an image, but for    users who cannot view the images,    the color names are included within the <code>alt</code> attributes of the images:</p>
-        <p><img alt="The example HTML code as displayed in a browser. 3 links each containing a rectangular image:  1 is blue with the text 'blue', 2 red with the text 'red' and 3 is green with the text 'green'." src="http://www.w3.org/html/wg/drafts/html/master/images/buttons.png" height="45" width="274"></p>
-        <pre><code class="block">&lt;ul&gt;    
-&lt;li&gt;&lt;a href="red.html"&gt;&lt;img src="red.jpeg" <mark>alt="Red"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;li&gt;&lt;a href="green.html"&gt;&lt;img src="green.jpeg" <mark>alt="Green"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;li&gt;&lt;a href="blue.html"&gt;&lt;img src="blue.jpeg" <mark>alt="Blue"</mark>&gt;&lt;/a&gt;&lt;/li&gt;    
-&lt;/ul&gt; </code>   </pre>
+       <p>In this example, a portion of an editor interface is displayed. Each button has an icon representing an action a user can take on content they are editing. For users who cannot view the images, the action names are included within the <code>alt</code> attributes of the images:</p>
+        <p><img alt="5 buttons: bold, italic, strike through, bulleted list and numbered list." src="http://www.w3.org/html/wg/drafts/html/master/images/buttons1.png"></p>
+        <pre>  &lt;ul&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="b.png" <strong>alt="Bold"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="i.png" <strong>alt="Italics"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="strike.png" <strong>alt="Strike through"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="blist.png" <strong>alt="Bulleted list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="nlist.png" <strong>alt="Numbered list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  </pre>
       </div>
       <div class="example">
         <p>In this example, a link contains a logo. The link points to the W3C web site <strong>from an external site</strong>. The text alternative is    a brief description of the link target.</p>
