@@ -91,7 +91,8 @@ code {color:#900 !important}
           // previousMaturity:  "WD",
 
           // if there a publicly available Editor's Draft, this is the link
-           edDraftURI:           "http://rawgit.com/w3c/alt-techniques/master/index.html",
+          edDraftURI:           "http://w3c.github.io/w3c/alt-techniques/",
+          previousDiffURI:  "http://www.w3.org/TR/html-alt-techniques/",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
@@ -99,13 +100,19 @@ code {color:#900 !important}
           // editors, add as many as you like
           // only "name" is required
           editors:  [
+              { name: "Shane McCarron", url: 'http://blog.halindrome.com', mailto: "shane@aptest.com",
+                  company: "Applied Testing and Technology, Inc.", companyURL:
+                  "http://www.aptest.com" },
+              { name: "Liam R E Quin", url: 'http://www.holoweb.net/~liam', mailto: "liam@w3.org",
+                  company: "World Wide Web Consortium", companyURL:
+                  "http://www.w3.org" },
               {
-                  name:       "Steve Faulkner"
+                  name:       "Steve Faulkner (until November 2014)"
               //,   url:        "http://example.org/"
               ,   mailto:     "sfaulkner@paciellogroup.com"
               ,   company:    "The Paciello Group"
-              //,   companyURL: "http://example.com/"
-              },
+              ,   companyURL: "http://www.paciellogroup.com/"
+              }
           ],
           
           // name of the WG
@@ -116,6 +123,7 @@ code {color:#900 !important}
           
           // name (without the @w3c.org) of the public mailing to which comments are due
           wgPublicList: "public-html",
+          processVersion:       "2005",
           
           // URI of the patent status for this WG, for Rec-track documents
           // !!!! IMPORTANT !!!!
@@ -135,17 +143,25 @@ code {color:#900 !important}
     </section>
     
     <section id='sotd'>
-      <p>This document was developed through the <a href="http://www.w3.org/WAI/PF/html-task-force">HTML Accessibility Taskforce</a>, and is published by the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> with approval by the <a href="http://www.w3.org/WAI/PF/">Protocols and Formats Working Group</a>.</p>
+      <p>This document was developed through the <a href="http://www.w3.org/WAI/PF/html-task-force">HTML Accessibility Task Force</a>, and is published by the <a href="http://www.w3.org/html/wg/">HTML Working Group</a> with approval by the <a href="http://www.w3.org/WAI/PF/">Protocols and Formats Working Group</a>.</p>
       <p>It is a draft document and its contents are subject to change without notice.</p>
       <p>It is expected to be published as a W3C Working Group Note.</p>
     </section>
     
     <section>
+      <h2 id="introduction">Introduction</h2>
+      <p>The <code>alt</code> and <code>longdesc</code> attributes are markup defined by the HTML 5 Recommendation [[!HTML5]] that can be placed on any <code>img</code> element. These attributes can be used to provide simple or extensive descriptions of an image.  The descriptions are useful when an image is not displayed, but also for users who are unable to view images in the content.  The descriptions may also be available to web search engines and in-page user agent searches.</p>
+
+      <p>This document describes various techniques for appropriately using these attributes in HTML 5 content.</p>
+
+    </section>
+    <section>
       <h2 id="alt">Requirements for providing text to act as an alternative for images</h2>
-      <p><a href="http://www.w3.org/TR/WCAG20/#text-altdef">Text alternatives</a>,[<a href="#bib-WCAG20">WCAG</a>] are a primary way of making visual information accessible, because   they can be rendered through any    sensory modality (for example, visual, auditory or tactile) to match   the needs of the user. Providing text alternatives allows    the information to be rendered in a variety of ways by a variety of   user agents. For example, a person who cannot see a picture    can have the text alternative read aloud using synthesized speech.</p>
-      <p>The <code>alt</code> attribute on images is a very important accessibility attribute.    Authoring useful <code>alt</code> attribute content requires the author to carefully consider the context in     which the image appears and the function that image may have in that context. The guidance included     here addresses the most common ways authors use images. Additional guidance and techniques are available in <a href="http://w3.org/WAI/alt/">Resources on Alternative Text for Images</a>.</p>
+      <p><a href="http://www.w3.org/TR/WCAG20/#text-altdef">Text alternatives</a>, [[WCAG20]] are a primary way of making visual information accessible.
+      Using these techniques, visual information can be rendered through any sensory modality (e.g., visual, auditory, or tactile) to match the needs of the user. Providing text alternatives allows the information to be rendered in a variety of ways by a variety of user agents. For example, a person who cannot see a picture can have the text alternative read aloud using synthesized speech.</p>
+      <p>The <code>alt</code> and <code>longdesc</code> [[HTML-LONGDESC]] attributes on images are very important accessibility attributes. Authoring useful alternative content via these attributes requires the author to carefully consider the context in which the image appears and the function that image may have in that context. The guidance included here addresses the most common ways authors use images. Additional guidance and techniques are available in <a href="http://w3.org/WAI/alt/">Resources on Alternative Text for Images</a>.</p>
      <section>
-      <h3 id="examples-of-scenarios-where-users-benefit-from-text-alternatives-for-images"> Examples of scenarios where users benefit from text alternatives for images</h3>
+      <h3 id="examples-of-scenarios-where-users-benefit-from-text-alternatives-for-images">Examples of scenarios where users benefit from text alternatives for images</h3>
       <ul>
         <li>They have a very slow connection and are browsing with images disabled.</li>
         <li>They have a vision impairment and use text to speech software.</li>
@@ -154,12 +170,17 @@ code {color:#900 !important}
         <li>They are listening to the page being read out by a voice Web browser.</li>
         <li>They have images disabled to save on download costs.</li>
         <li>They have problems loading images or the source of an image is wrong.</li>
+        <li>They are in an environment where focusing upon a screen is challenging and/or dangerous, and having the content read to them is a safer alternative (e.g., whilst in a vehicle).</li>
       </ul>
-      </section><section>
-      <h3 id="general-guidelines">General guidelines</h3>
-      <p>Except where otherwise specified, the <code>alt</code> attribute must be specified and its value must not be empty;     the value must be an appropriate functional replacement for the image. The specific requirements for the <code>alt</code> attribute content    depend on the image's function in the page, as described in the following sections.</p>
-      <p>To determine an appropriate text alternative it is important to think about why an image is being included in a page.     What is its purpose? Thinking like this will help you to understand what is important about the image for the     intended audience. Every image has a reason for being on a page, because it provides useful information, performs a     function, labels an interactive element, enhances aesthetics or is purely decorative. Therefore, knowing what the image     is for, makes writing an appropriate text alternative easier.</p>
       </section>
+      <section>
+      <h3 id="general-guidelines">General guidelines</h3>
+      <p>Except where otherwise specified, the <code>alt</code> attribute must be specified and its value must not be empty. When specified, the value must be an appropriate functional replacement for the image. The specific requirements for the <code>alt</code> attribute content    depend on the image's function in the page, as described in the following sections.</p>
+      <p>To determine an appropriate text alternative it is important to think about why an image is being included in a page. What is its purpose? Thinking like this will help you to understand what is important about the image for the intended audience. Every image has a reason for being on a page, because it provides useful information, performs a function, labels an interactive element, enhances aesthetics or is purely decorative. Therefore, knowing what the image is for makes writing an appropriate text alternative easier.</p>
+      </section>
+    </section>
+    <section>
+      <h2 id="scenarios">Common text alternative techniques</h2>
       <section>
       <h3 id="a-link-or-button-containing-nothing-but-an-image">A link or button containing nothing but an image</h3>
       <p>When an <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-a-element">a</a> element that is a <a href="http://www.w3.org/html/wg/drafts/html/master/links.html#hyperlink">hyperlink</a>, or a <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element">button</a> element, has no text content   but contains one or more images, include text in the <code>alt</code> attribute(s) that together convey the purpose of the link or button.</p>
@@ -208,7 +229,8 @@ code {color:#900 !important}
 &lt;img src="pip.gif" <mark>alt="PIP CO home"</mark>&gt;&lt;img src="co.gif" <mark>alt=""</mark>&gt;    
 &lt;/a&gt;    </code></pre>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="graphical-representations:-charts,-diagrams,-graphs,-maps,-illustrations">Graphical Representations: Charts, diagrams, graphs, maps, illustrations</h3>
       <p>Users can benefit when content is presented in graphical form, for example as a     flowchart, a diagram, a graph, or a map showing directions. Users also benefit when     content presented in a graphical form is also provided in a textual format, these users include     those who are unable to view the image (e.g. because they have a very slow connection,     or because they are using a text-only browser, or because they are listening to the page     being read out by a hands-free automobile voice Web browser, or because they have a     visual impairment and use an assistive technology to render the text to speech).</p>
       <div class="example">
@@ -348,25 +370,27 @@ Chrome has 25%, Safari has 6% and Opera has 4%.&lt;/p&gt;
         <p><img alt="O" src="http://www.w3.org/html/wg/drafts/html/master/images/fancyO.png" height="32" width="24">nce upon a time and a long long time ago...</p>
         <pre><code class="block">&lt;p&gt;&lt;img src="initials/fancyO.png" alt="O"&gt;nce upon a time and a long long time ago...</code></pre>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="images-that-include-text">Images that include text</h3>
       <p>Sometimes, an image consists of a graphics such as a chart and associated text.     In this case it is recommended that the text in the image is included in the text alternative.</p>
       <div class="example">
         <p>Consider an image containing  a pie chart and associated text. It is recommended wherever     possible to provide any associated text as text, not an image of text.     If this is not possible include the text in the text alternative along with the pertinent information    conveyed in the image.</p>
-        <p><img alt="Figure 1. Distribution of Articles by Journal     Category. Pie chart: Language=68%, Education=14% and Science=18%." id="piechart" src="http://www.w3.org/html/wg/drafts/html/master/images/figure1.png" height="279" width="351"></p>
+        <p><img alt="Figure 1. Distribution of Articles by Journal     Category. Pie chart: Language=68%, Education=14%, and Science=18%." id="piechart" src="http://www.w3.org/html/wg/drafts/html/master/images/figure1.png" height="279" width="351"></p>
         <pre><code class="block">&lt;p&gt;&lt;img src="figure1.gif" <mark>alt="Figure 1. Distribution of Articles by Journal Category.     
-Pie chart: Language=68%, Education=14% and Science=18%."</mark>&gt;&lt;/p&gt; </code>   </pre>
+Pie chart: Language=68%, Education=14%, and Science=18%."</mark>&gt;&lt;/p&gt; </code>   </pre>
       </div>
       <div class="example">
         <p>Here's another example of the same <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#piechart">pie chart</a> image,     showing a short text alternative included in the <code>alt</code> attribute     and a longer text alternative in text. The <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">figure</a> and <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> elements are used to associate the longer text alternative with the image. The <code>alt</code> attribute is used    to label the image.</p>
         <pre><code class="block">&lt;figure&gt;    
 &lt;img src="figure1.gif" <mark>alt="Figure 1"</mark>&gt;    
 &lt;figcaption&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; Distribution of Articles by Journal Category.     
-Pie chart: Language=68%, Education=14% and Science=18%.&lt;/figcaption&gt;    
+Pie chart: Language=68%, Education=14%, and Science=18%.&lt;/figcaption&gt;    
 &lt;/figure&gt;    </code></pre>
         <p>The advantage of this method over the previous example is that the text alternative     is available to all users at all times. It also allows structured mark up to be used in the text     alternative, where as a text alternative provided using the <code>alt</code> attribute does not.</p>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="images-that-enhance-the-themes-or-subject-matter-of-the-page-content">Images that enhance the themes or subject matter of the page content</h3>
       <p>An image that isn't discussed directly by the surrounding text but still has     some relevance can be included in a page using the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element. Such images     are more than mere decoration, they may augment the themes or subject matter of the page     content and so still form part of the content. In these cases, it is recommended that a     text alternative be provided. </p>
       <div class="example">
@@ -394,7 +418,8 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
 &lt;h1&gt;Robin Berjon&lt;/h1&gt;    
 &lt;p&gt;What more needs to be said?&lt;/p&gt;</code>    </pre>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="a-graphical-representation-of-some-of-the-surrounding-text">A graphical representation of some of the surrounding text</h3>
       <p>In many cases, the image is actually just supplementary, and its presence merely reinforces the    surrounding text. In these cases, the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute must be    present but its value must be the empty string.</p>
       <p>In general, an image falls into this category if removing the image doesn't make the page any    less useful, but including the image makes it a lot easier for users of visual browsers to    understand the concept.</p>
@@ -417,12 +442,14 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
 
 &lt;!-- Full Recitation of Alfred, Lord Tennyson's Poem.  --&gt;</code>    </pre>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="a-purely-decorative-image-that-doesn't-add-any-information">A purely decorative image that doesn't add any information</h3>
-      <p>Purely decorative images are visual enhancements, decorations or embellishments that provide no     function or information beyond aesthetics to users who can view the images.</p>
-      <p>Mark up purely decorative images so they can be ignored by assistive technology by using an empty <code>alt</code>     attribute (alt=""). While it is not unacceptable to include decorative images inline,     it is recommended if they are purely decorative to include the image using CSS.</p>
+      <p>Purely decorative images are visual enhancements, decorations, or embellishments that provide no function or information beyond aesthetics to users who can view the images.</p>
+      <p>Mark up purely decorative images so they can be ignored by assistive technology by using an empty <code>alt</code> attribute (alt=""). </p>
+      <p class='note'>An alternate technique is to include the image using CSS.  This is NOT recommended, as CSS background images can make it difficult for visually impaired users to enable "high contrast" mode.</p>
       <div class="example">
-        <p>Here's an example of an image being used as a decorative banner for a person's blog, the image offers no information     and so an empty <code>alt</code> attribute is used.</p>
+        <p>Here's an example of an image being used as a decorative banner for a person's blog. The image offers no information and so an empty <code>alt</code> attribute is used.</p>
         <div>
           <p><img alt="" src="http://www.w3.org/html/wg/drafts/html/master/images/border.png" height="30" width="400"></p>
           <p><strong>Clara's Blog</strong></p>
@@ -435,7 +462,8 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
 
 &lt;p&gt;Welcome to my blog...&lt;/p&gt;  </code>  </pre>
       </div>
-      </section><section>
+      </section>
+      <section>
       <h3 id="inline">Inline images</h3>
       <p>When images are used inline as part of the flow of text in a sentence, provide a word or phrase as a text     alternative which makes sense in the context of the sentence it is apart of.</p>
       <div class="example">
@@ -445,7 +473,8 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
         <pre><code class="block">My &lt;img src="heart.png" <mark>alt="heart"</mark>&gt; breaks.</code></pre>
       </div>
       <p class="note">Unicode characters could be used as an alternative to inline images where appropriate. Modern browsers have support for characters like "♥" and "☺", and support the use of custom fonts to render those as colored image fonts, or an author can use image replacement techniques.</p>
-      </section><section>
+      </section>
+      <section>
       <h3 id="a-group-of-images-that-form-a-single-larger-picture-with-no-links">A group of images that form a single larger picture with no links</h3>
       <p>When a picture has been sliced into smaller image files that are then displayed    together to form the complete picture again, include a text alternative for one    of the images using the <code>alt</code> attribute as per the relevant relevant    guidance for the picture as a whole, and then include an empty <code>alt</code>    attribute on the other images.</p>
       <div class="example">
@@ -464,7 +493,8 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
 &lt;img src="0" <mark>alt=""</mark>&gt;
 &lt;/meter&gt;&lt;/p&gt;</code>    </pre>
       </div>
-      </section><section>
+      </section>
+      <section>
   <h3 id="image-maps-0">Image maps</h3>
 If an <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element has a usemap attribute which references a <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-map-element">map</a> element containing <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-area-element">area</a> elements that have href attributes, the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> is considered to be interactive content.    In such cases, always provide a text alternative for the image using the <code>alt</code> attribute.
 <div class="example">
@@ -500,9 +530,10 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
 &lt;a href="?stroke=head"&gt;&lt;img src="crocoduck1.png" <mark>alt="Stroke crocodile's angry, chomping head"</mark>&gt;&lt;/a&gt;
 &lt;a href="?stroke=body"&gt;&lt;img src="crocoduck2.png" <mark>alt="Stroke duck's soft, feathery body"</mark>&gt;&lt;/a&gt;      </pre>
 </div>
-</section><section>
+</section>
+<section>
 <h3 id="images-of-pictures">Images of Pictures</h3>
-<p>Images of pictures or graphics include visual representations of objects, people, scenes, abstractions, etc.      This <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a>,[<a href="#bib-WCAG20">WCAG</a>] can convey a significant amount of     information visually or provide a <a href="http://www.w3.org/TR/WCAG20/#sensoryexpdef">specific sensory experience</a>,[<a href="#bib-WCAG20">WCAG</a>] to     a sighted person. Examples include photographs, paintings, drawings and artwork.</p>
+<p>Images of pictures or graphics include visual representations of objects, people, scenes, abstractions, etc.      This <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a>,[<a href="#bib-WCAG20">WCAG</a>] can convey a significant amount of     information visually or provide a <a href="http://www.w3.org/TR/WCAG20/#sensoryexpdef">specific sensory experience</a>,[<a href="#bib-WCAG20">WCAG</a>] to     a sighted person. Examples include photographs, paintings, drawings, and artwork.</p>
 <p>An appropriate text alternative for a picture is a brief description, or <a href="http://www.w3.org/TR/WCAG20/#namedef">name</a>[<a href="#bib-WCAG20">WCAG</a>].   As in all text alternative authoring decisions, writing suitable text   alternatives for pictures requires     human judgment. The text value is subjective to the context where the   image is used and the page author's writing style. Therefore,     there is no single 'right' or 'correct' piece of alt text   for any particular image. In  addition to providing a short text     alternative that gives a brief description of the non-text content,   also providing supplemental content through another means when     appropriate may be useful.</p>
 <div class="example">
   <p>This first example shows an image uploaded to a photo-sharing site. The photo is of a cat, sitting in the bath. The image has a     text alternative provided using the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element's <code>alt</code> attribute. It also has a caption provided by including     the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element in a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">figure</a> element and using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> element to identify the caption text.</p>
@@ -523,7 +554,8 @@ any crocodile parts. This would just enrage the beast further.&lt;/p&gt;
 &lt;figcaption&gt;The first of the ten cards in the Rorschach test.&lt;/figcaption&gt;
 &lt;/figure&gt; </code></pre>
 </div>
-</section><section>
+</section>
+<section>
 <h3 id="webcam-images">Webcam images</h3>
 <p>Webcam images are static images that are automatically updated periodically. Typically the images are    from a fixed viewpoint, the images may update on the page automatically as each new image is uploaded from    the camera or the user may be required to refresh the page to view an updated image. Examples include traffic    and weather cameras.</p>
 <div class="example">
@@ -542,7 +574,8 @@ This image is updated every hour.&lt;/figcaption&gt;
 &lt;p&gt;View the &lt;a href="http://news.bbc.co.uk/weather/forecast/4296?area=Kingston"&gt;latest weather details&lt;/a&gt; 
 for Kingston upon Thames.&lt;/p&gt;    </code></pre>
 </div>
-</section><section>
+</section>
+<section>
 <h3 id="when-a-text-alternative-is-not-available-at-the-time-of-publication">When a text alternative is not available at the time of publication</h3>
 <p>In some cases an image is included in a published document, but the   author is unable to provide an appropriate text alternative.     In such cases the minimum requirement is to provide a caption for the   image using the <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">figure</a> and <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">figcaption</a> elements under the following conditions:</p>
 <ul id="figcaption-as-alt-condition">
@@ -596,7 +629,8 @@ for Kingston upon Thames.&lt;/p&gt;    </code></pre>
 &lt;/table&gt;</code></pre>
 </div>
 <p class="note">Since some users cannot use images at all (e.g. because they are blind) the <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute is only allowed to be omitted when no text     alternative is available and none can be made available, as in the above examples.</p>
-</section><section>
+</section>
+<section>
 <h3 id="an-image-not-intended-for-the-user">An image not intended for the user</h3>
 <p>Generally authors should avoid using <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> elements    for purposes other than showing images.</p>
 <p>If an <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> element is being used for purposes other    than showing an image, e.g. as part of a service to count page    views, use an empty <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#attr-img-alt">alt</a> attribute.</p>
@@ -610,7 +644,8 @@ for Kingston upon Thames.&lt;/p&gt;    </code></pre>
   <pre><code class="block">&lt;img src="spacer.gif" width="10" height="10" <mark>alt=""</mark>&gt;</code></pre>
 </div>
 <p class="note">It is recommended that that CSS be used to position content instead of <a href="http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-img-element">img</a> elements.</p>
-</section><section>
+</section>
+<section>
 <h3 id="icon-images">Icon Images</h3>
 <p>An icon is usually a simple picture representing a program, action, data file or a concept.     Icons are intended to help users of visual browsers to recognize features at a glance.</p>
 <p>Use an empty <code>alt</code> attribute when an icon is supplemental to    text conveying the same meaning.</p>
@@ -636,7 +671,8 @@ for Kingston upon Thames.&lt;/p&gt;    </code></pre>
   <pre><code class="block">&lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt="Warning!"</mark>&gt; 
   Your session is about to expire&lt;/p&gt;</code></pre>
 </div>
-</section><section>
+</section>
+<section>
 <h3 id="logos,-insignia,-flags,-or-emblems">Logos, insignia, flags, or emblems</h3>
 <p>Many pages include logos, insignia, flags, or emblems, which stand for a company, organization, project,     band, software package, country, or other entity. What can be considered as an appropriate text alternative depends upon,     like all images, the context in which the image is being used and what function it serves in the given context.</p>
 <p>If a logo is the sole content of a link, provide a brief description of the link target in the <code>alt</code> attribute.</p>
@@ -669,7 +705,8 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
 
 <em>Information about HTML5</em></code></pre>
 </div>
-</section><section>
+</section>
+<section>
   <h3 id="captcha-images">CAPTCHA Images</h3>
 <p>CAPTCHA stands for "Completely Automated Public Turing test to tell Computers and Humans Apart".    CAPTCHA images are used for security purposes to confirm that content is being accessed by a person    rather than a computer. This authentication is done through visual verification of an image. CAPTCHA     typically presents an image with characters or words in it that the user is to re-type. The image is     usually distorted and has some noise applied to it to make the characters difficult to read.</p>
 <p>To improve the accessibility of CAPTCHA provide text alternatives   that identify and describe the purpose of the image, and provide   alternative     forms of the CAPTCHA using output modes for different types of sensory   perception. For instance provide     an audio alternative along with the visual image. Place the audio   option right next to the visual one.     This helps but is still problematic for people without sound cards,   the deaf-blind, and some people with limited hearing.     Another method is to include a form that asks a question along with   the visual image. This helps but can be     problematic for people with cognitive impairments.</p>
@@ -826,6 +863,8 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
   </section>
   <section>
   <h2 id="gj">Notes on use of Gaiji</h2>
+  <p>Gaiji is a term meaning "external characters".  In general, this means characters that are not represented in existing Japanese
+  encoding systems such as [[UNICODE]].</p>
   <ul>
     <li>When gaiji is used as a "hack" to display a character that is adequately represented by a real unicode character, the recommended practice is to remove the gaiji image and just use the unicode character.    
     </li>
@@ -837,15 +876,16 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
   </ul>
  </section>
 
-<section><H2 id="glossary">Glossary</H2>
-<H3 id="api">Accessibility <ABBR title="Application Programming Interface">API</ABBR></H3>
-<p>Operating systems and other platforms provide a set of interfaces that expose information about <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_object">objects</A> and <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_event">events</A> to <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_at">assistive technologies</A>. Assistive technologies use these interfaces to get information about and interact with those <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_widget">widgets</A>. Examples of this are the <A href="http://java.sun.com/javase/technologies/accessibility/index.jsp">Java Accessibility <ABBR title="Application Programming Interface">API</ABBR></A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_JAPI">JAPI</A>], <A href="http://msdn.microsoft.com/en-us/library/ms697270%28VS.85%29.aspx">Microsoft Active Accessibility</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_MSAA">MSAA</A>], <A href="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Accessibility/cocoaAXIntro/cocoaAXintro.html">the Mac <ABBR title="OS Ten">OS X</ABBR> Accessibility Protocol</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_AXAPI">AXAPI</A>], the <A href="http://library.gnome.org/devel/atk/">Gnome Accessibility Toolkit (ATK)</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_ATK">ATK</A>], and <A href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</A> [<A href="http://www.w3.org/TR/wai-aria/references#ref_IA2">IA2</A>]. </p>
+<section>
+<h2 id="glossary">Glossary</h2>
+<h3 id="api">Accessibility <abbr title="Application Programming Interface">API</abbr></h3>
+<p>Operating systems and other platforms provide a set of interfaces that expose information about <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_object">objects</a> and <a href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_event">events</a> to <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_at">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <A href="http://www.w3.org/TR/2010/WD-wai-aria-20100916/terms#def_widget">widgets</a>. Examples of this are the <A href="http://java.sun.com/javase/technologies/accessibility/index.jsp">Java Accessibility <ABBR title="Application Programming Interface">API</abbr></a> [<a href="http://www.w3.org/TR/wai-aria/references#ref_JAPI">JAPI</a>], <A href="http://msdn.microsoft.com/en-us/library/ms697270%28VS.85%29.aspx">Microsoft Active Accessibility</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_MSAA">MSAA</a>], <A href="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Accessibility/cocoaAXIntro/cocoaAXintro.html">the Mac <ABBR title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_AXAPI">AXAPI</a>], the <A href="http://library.gnome.org/devel/atk/">Gnome Accessibility Toolkit (ATK)</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_ATK">ATK</a>], and <A href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_IA2">IA2</a>]. </p>
 <H3 id="acc_name">Accessible name</H3>
-<p>The accessible name is the name of a user interface element. Each platform <A href="http://dev.w3.org/html5/alt-techniques/#api">accessibility API</A> provides the accessible name property. The value of the accessible name   may be derived from a visible (e.g., the visible text on a button) or   invisible (e.g., the text alternative that describes an icon) property   of the user interface element.</p>
+<p>The accessible name is the name of a user interface element. Each platform <A href="http://dev.w3.org/html5/alt-techniques/#api">accessibility API</a> provides the accessible name property. The value of the accessible name   may be derived from a visible (e.g., the visible text on a button) or   invisible (e.g., the text alternative that describes an icon) property   of the user interface element.</p>
 <H3 id="hbp">alt text </H3>
 <p>Colloquial term for a text alternative provided  using the <code>alt</code> attribute of an img element.</p>
 <H3 id="hbq">assistive technology</H3>
-<p>Hardware and/or software that acts as a user agent, or along with a mainstream user agent, to provide functionality to meet the requirements of users with disabilities that go beyond those offered by mainstream user agents. A more <A href="http://www.w3.org/TR/WCAG20/#atdef">detailed explanation of assistive technology</A> is provided in the WCAG 2.0 glossary.</p>
+<p>Hardware and/or software that acts as a user agent, or along with a mainstream user agent, to provide functionality to meet the requirements of users with disabilities that go beyond those offered by mainstream user agents. A more <A href="http://www.w3.org/TR/WCAG20/#atdef">detailed explanation of assistive technology</a> is provided in the WCAG 2.0 glossary.</p>
 <H3 id="hbr">content (Web content) </H3>
 <p>Information and sensory experience to be communicated to the user by means of a user agent such as a web browser, including code or markup that defines the content's structure, presentation, and interactions. </p>
 <H3 id="hpa">programmatic association</H3>
