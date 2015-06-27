@@ -196,57 +196,64 @@ code {color:#900 !important}
 	 <p>Because <code>alt</code> is an HTML attribute there are some restrictions on
 	   what it can contain and how it can be used:</p>
 
-	 <h4 id="alt-restrict-lang">Language of Alternate Text</h4>
+	 <section>
+	   <h4 id="alt-restrict-lang">Language of Alternate Text</h4>
 	   <p>The language of the attribute value cannot be marked as being
-	   different from that of the image element itself. This is not usually
-	   a problem in practice unless the image element was supplied by
-	   automated language-based document assembly; use the
-	   <code>lang</code> (and for the XML syntax the <code>xml:lang</code> attribute)
-	   to mark the language of the alternate text if it differs from that of
-	   the surrounding text.</p>
+	     different from that of the image element itself. This is not usually
+	     a problem in practice unless the image element was supplied by
+	     automated language-based document assembly; use the
+	     <code>lang</code> (and for the XML syntax the <code>xml:lang</code> attribute)
+	     to mark the language of the alternate text if it differs from that of
+	     the surrounding text.</p>
+	 </section>
 
-	 <h4 id="alt-restrict-plaintext">Sub-elements not available in Alternate Text</h4>
-
+	 <section>
+	   <h4 id="alt-restrict-plaintext">Sub-elements not available in Alternate Text</h4>
 	   <p>Attributes are plain text and connot contain sub-elements.
 	   In particular this also means that fragments of MathML or SVG
 	   cannot be included in an <code>alt</code> attribute value, and
 	   that emphasis cannot be used.</p>
+	  </section>
 
-	 <h4 id="alt-restrict-overflow">Effective Length Limits on Alternate Text</h4>
-	 <p>The value of the <code>alt</code> attribute will generally be
-	   rendered by an HTML user agent as replacement text
-	   in place of a broken or unavailable
-	   image, or if image disaply is disabled, or in a text-mode browser.
-	   The replacement text will usually be rendered in the space reserved
-	   for the image. If the text does not fit in the available space,
-	   some user agents will truncate the text and others might not
-	   display the text at all, reducing accessibility and usability
-	   of the document for sighted users in the case that images were
-	   not available.</p>
-	 <p>In at least some agents the CSS <code>overflow</code> property
-	   may be used to allow the alternate text to extend outside
-	   the width and height allocated for the <code>img</code> element.</p>
+	  <section>
+	   <h4 id="alt-restrict-overflow">Effective Length Limits on Alternate Text</h4>
+	   <p>The value of the <code>alt</code> attribute will generally be
+	     rendered by an HTML user agent as replacement text
+	     in place of a broken or unavailable
+	     image, or if image disaply is disabled, or in a text-mode browser.
+	     The replacement text will usually be rendered in the space reserved
+	     for the image. If the text does not fit in the available space,
+	     some user agents will truncate the text and others might not
+	     display the text at all, reducing accessibility and usability
+	     of the document for sighted users in the case that images were
+	     not available.</p>
+	   <p>In at least some agents the CSS <code>overflow</code> property
+	     may be used to allow the alternate text to extend outside
+	     the width and height allocated for the <code>img</code> element.</p>
+	  </section>
 
-	 <h4 id="alt-restrict-no-difference">No differentiation From Surrounding Text</h4>
-	 <p>Text readers will generally read out the value of the
-	   <code>alt</code> attribute
-	   every time it is encountered, and may or may not provide the
-	   user with a way to skip to the end of the alternate text and
-	   to carry on reading out the document just after the image element.
-	   This means that documents should not contain overly
-	   burdensome alternate text even if it might fit in the available
-	   space.</p>
-	 <p>For visual differentiation, CSS styles such as
-	   <code>color</code> can be applied to the <code>img</code> element.</p>
+	  <section>
+	   <h4 id="alt-restrict-no-difference">No differentiation From Surrounding Text</h4>
+	   <p>Text readers will generally read out the value of the
+	     <code>alt</code> attribute
+	     every time it is encountered, and may or may not provide the
+	     user with a way to skip to the end of the alternate text and
+	     to carry on reading out the document just after the image element.
+	     This means that documents should not contain overly
+	     burdensome alternate text even if it might fit in the available
+	     space.</p>
+	   <p>For visual differentiation, CSS styles such as
+	     <code>color</code> can be applied to the <code>img</code> element.</p>
 
-	 <p>Text that is for use as an alternatve to an image but that
-	   contains formatting or markup (such as tables or equations),
-	   needs to be made available separately as described in the next
-	   section,
-	   <a href="#principles-for-providing-text-alternatives">Principles for
-	     providing text alternatives</a>. In this case a short text
-	   alternative, such as <code>Maxwell's Equations</code>, should be
-	   used in the <code>alt</code> attribute.</p>
+	   <p>Text that is for use as an alternatve to an image but that
+	     contains formatting or markup (such as tables or equations),
+	     needs to be made available separately as described in the next
+	     section,
+	     <a href="#principles-for-providing-text-alternatives">Principles for
+	       providing text alternatives</a>. In this case a short text
+	     alternative, such as <code>Maxwell's Equations</code>, should be
+	     used in the <code>alt</code> attribute.</p>
+	  </section>
 
        </section>
 
@@ -275,167 +282,176 @@ code {color:#900 !important}
 	   logo, be direct and simply give the purpose, such as <q>Make Payment</q>
 	   or <q>W3C Logo</q>.</p>
 
-	 <h4 id="alt-guideline-characters">Images As Text: Give the text</h4>
-	 <p>If an image is used to stand for a special character, emoji, gaiji,
-	   itaiji, emoticon, or text in an unusual font, the alt text should
-	   simply be the text that is on the image, or a textual equivalent
-	   such as <code>:-)</code> for a smiling face.</p>
-	 <p class="note">In many cases Web fonts can be used instead of images,
-	   and, provided that the fonts are correctly encoded and that the
-	   characters represented are in Unicode, user agents that do not use
-	   the fonts will still render the correct text.</p>
+	 <section>
+	   <h4 id="alt-guideline-characters">Images As Text: Give the text</h4>
+	   <p>If an image is used to stand for a special character, emoji, gaiji,
+	     itaiji, emoticon, or text in an unusual font, the alt text should
+	     simply be the text that is on the image, or a textual equivalent
+	     such as <code>:-)</code> for a smiling face.</p>
+	   <p class="note">In many cases Web fonts can be used instead of images,
+	     and, provided that the fonts are correctly encoded and that the
+	     characters represented are in Unicode, user agents that do not use
+	     the fonts will still render the correct text.</p>
+	 </section>
 
-	 <h4 id="alt-guideline-mathematics">Images of Equations and Tables</h4>
-	 <p>Recommended practice is to mark up mathematical equations
-	   with MathML; if this is not possible, sometimes a picture
-	   of an equation is used. Similarly even complex tables can
-	   usually be marked up in HTML directly, but sometimes a
-	   picture is used instead.  In these and similar cases the
-	   alt attribute should be given a value such as <q>Equation 7</q>
-	   or <q>Table of wandering monsters by level</q>.
-	   Since people seeing the image would not want to read the
-	   same content in two different forms, the information in the
-	   equation or table picture should then be presented in an
-	   external document, pointed to with a URI as the value of
-	   <code>longdesc</code> attribute, for example
-	   <code>longdesc</code> <code>=</code> <code>equation007.html</code>.</p>
+	 <section>
+	   <h4 id="alt-guideline-mathematics">Images of Equations and Tables</h4>
+	   <p>Recommended practice is to mark up mathematical equations
+	     with MathML; if this is not possible, sometimes a picture
+	     of an equation is used. Similarly even complex tables can
+	     usually be marked up in HTML directly, but sometimes a
+	     picture is used instead.  In these and similar cases the
+	     alt attribute should be given a value such as <q>Equation 7</q>
+	     or <q>Table of wandering monsters by level</q>.
+	     Since people seeing the image would not want to read the
+	     same content in two different forms, the information in the
+	     equation or table picture should then be presented in an
+	     external document, pointed to with a URI as the value of
+	     <code>longdesc</code> attribute, for example
+	     <code>longdesc</code> <code>=</code> <code>equation007.html</code>.</p>
+	 </section>
 
-	 <h4 id="alt-guideline-charts-and-diagrams">Charts and Diagrams</h4>
-	 <p>It is often possible to represent charts, diagrams and other
-	   explanitory sorts of picture using SVG. This does not automatically
-	   make such pictures be accessbible, but different mechanisms then
-	   befomre available for embedding text alternatives in the SVG images.</p>
-	 <p>If SVG is for some reason not used then the same considerations
-	   as for <a href="#alt-guideline-mathematics">images of equations and
-	     tables</a>
-	   generally apply. A description of a diagram, however, may need to
-	   include information about the presentation as well as the
-	   information.  For example, a government report in an archival
-	   format might mention the colors used in a bar chart 
-	   in order to facilitate subsequent discussions.</p>
+	 <section>
+	   <h4 id="alt-guideline-charts-and-diagrams">Charts and Diagrams</h4>
+	   <p>It is often possible to represent charts, diagrams and other
+	     explanitory sorts of picture using SVG. This does not automatically
+	     make such pictures be accessbible, but different mechanisms then
+	     befomre available for embedding text alternatives in the SVG images.</p>
+	   <p>If SVG is for some reason not used then the same considerations
+	     as for <a href="#alt-guideline-mathematics">images of equations and
+	       tables</a>
+	     generally apply. A description of a diagram, however, may need to
+	     include information about the presentation as well as the
+	     information.  For example, a government report in an archival
+	     format might mention the colors used in a bar chart 
+	     in order to facilitate subsequent discussions.</p>
+	 </section>
 
-	 <h4 id="alt-guidelines-simple-images">Simple Images</h4>
-	 <p>Where an image or diagram can be described adequately
-	   with a short piece of plain text that would easily fit
-	   in the space otherwise occupied by the image,
-	   that text should be used for the text alternative.</p>
+	 <section>
+	   <h4 id="alt-guidelines-simple-images">Simple Images</h4>
+	   <p>Where an image or diagram can be described adequately
+	     with a short piece of plain text that would easily fit
+	     in the space otherwise occupied by the image,
+	     that text should be used for the text alternative.</p>
+	 </section>
 
-	 <h4 id="alt-guidelines-decorative">Decorative and Pieced Images</h4>
-	 <p>If an image is purely decorative, it is not necessary to give
-	   it alt text; use an empty value for the
-	   <code>alt</code> attribute.
-	   If the image separates words of text an alternative text
-	   of a single space might be appropriate.</p>
-	 <p>When multiple images are placed together, for
-	   example to make up a frame or border or when a
-	   complex image is split into smaller images, only
-	   the first image should normally have explanitory
-	   text, in order to avoid tedious repetition from
-	   a screen reader.</p>
-       </section>
-     <section>
-      <h3 id="examples-of-scenarios-where-users-benefit-from-text-alternatives-for-images">Examples of scenarios where users benefit from text alternatives for images</h3>
-      <ul>
-        <li>They have a slow connection and are browsing with images disabled.</li>
-        <li>They have a vision impairment and use text to speech software.</li>
-        <li>They have a cognitive impairment and use text to speech software.</li>
-        <li>They are using a text-only browser.</li>
-        <li>They are listening to the page being read out by a voice Web browser.</li>
-        <li>They have images disabled to save on download costs.</li>
-        <li>They have problems loading images or the source of an image is wrong.</li>
-        <li>They are in an environment where focusing upon a screen is challenging and/or dangerous, and having the content read to them is a safer alternative (e.g., driving a vehicle).</li>
-      </ul>
+	 <section>
+	   <h4 id="alt-guidelines-decorative">Decorative and Pieced Images</h4>
+	   <p>If an image is purely decorative, it is not necessary to give
+	     it alt text; use an empty value for the
+	     <code>alt</code> attribute.
+	     If the image separates words of text an alternative text
+	     of a single space might be appropriate.</p>
+	   <p>When multiple images are placed together, for
+	     example to make up a frame or border or when a
+	     complex image is split into smaller images, only
+	     the first image should normally have explanitory
+	     text, in order to avoid tedious repetition from
+	     a screen reader.</p>
+	   </section>
+	 </section>
+       <section>
+	<h3 id="examples-of-scenarios-where-users-benefit-from-text-alternatives-for-images">Examples of scenarios where users benefit from text alternatives for images</h3>
+	<ul>
+	  <li>They have a slow connection and are browsing with images disabled.</li>
+	  <li>They have a vision impairment and use text to speech software.</li>
+	  <li>They have a cognitive impairment and use text to speech software.</li>
+	  <li>They are using a text-only browser.</li>
+	  <li>They are listening to the page being read out by a voice Web browser.</li>
+	  <li>They have images disabled to save on download costs.</li>
+	  <li>They have problems loading images or the source of an image is wrong.</li>
+	  <li>They are in an environment where focusing upon a screen is challenging and/or dangerous, and having the content read to them is a safer alternative (e.g., driving a vehicle).</li>
+	</ul>
+	</section>
+	<section>
+	<h3 id="general-guidelines">General guidelines</h3>
+	<p>Except where otherwise specified, the <code>alt</code> attribute must be specified and its value must not be empty. When specified, the value must be an appropriate functional replacement for the image. The specific requirements for the <code>alt</code> attribute content    depend on the image's function in the page, as described in the following sections.</p>
+	<p>To determine an appropriate text alternative it is important to think about why an image is being included in a page. What is its purpose? Thinking like this will help you to understand what is important about the image for the intended audience. Every image has a reason for being on a page, because it provides useful information, performs a function, labels an interactive element, enhances aesthetics or is purely decorative. Therefore, knowing what the image is for makes writing an appropriate text alternative easier.</p>
+	</section>
       </section>
       <section>
-      <h3 id="general-guidelines">General guidelines</h3>
-      <p>Except where otherwise specified, the <code>alt</code> attribute must be specified and its value must not be empty. When specified, the value must be an appropriate functional replacement for the image. The specific requirements for the <code>alt</code> attribute content    depend on the image's function in the page, as described in the following sections.</p>
-      <p>To determine an appropriate text alternative it is important to think about why an image is being included in a page. What is its purpose? Thinking like this will help you to understand what is important about the image for the intended audience. Every image has a reason for being on a page, because it provides useful information, performs a function, labels an interactive element, enhances aesthetics or is purely decorative. Therefore, knowing what the image is for makes writing an appropriate text alternative easier.</p>
-      </section>
-    </section>
-    <section>
-      <h2 id="scenarios">Common text alternative techniques</h2>
-      <section>
-      <h3 id="a-link-or-button-containing-nothing-but-an-image">A link or button containing nothing but an image</h3>
-      <p>When an <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-a-element">a</a> element that is a <a href="http://www.w3.org/html/wg/drafts/html/master/links.html#hyperlink">hyperlink</a>, or a <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element">button</a> element, has no text content   but contains one or more images, include text in the <code>alt</code> attribute(s) that together convey the purpose of the link or button.</p>
-       <p><img alt="5 buttons: bold, italic, strike through, bulleted list and numbered list." src="http://www.w3.org/html/wg/drafts/html/master/images/buttons1.png"></p>
-       <pre>  &lt;ul&gt;
-&lt;li&gt;&lt;button&gt;&lt;img src="b.png" <strong>alt="Bold"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li&gt;&lt;button&gt;&lt;img src="i.png" <strong>alt="Italics"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li&gt;&lt;button&gt;&lt;img src="strike.png" <strong>alt="Strike through"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li&gt;&lt;button&gt;&lt;img src="blist.png" <strong>alt="Bulleted list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li&gt;&lt;button&gt;&lt;img src="nlist.png" <strong>alt="Numbered list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
-      </div>
-      <div class="example">
-        <p>In this example, a link contains a logo. The link points to the W3C web site <strong>from an external site</strong>. The text alternative is    a brief description of the link target.</p>
-        <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
-        <pre><code class="block">&lt;a href="http://w3.org"&gt;    
-&lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C web site"</mark>&gt;    
-&lt;/a&gt;    </code></pre>
-      </div>
-      <div class="example">
-        <p>This example is the same as the previous example, except that the <strong>link is on the W3C web site</strong>. The text alternative is    a brief description of the link target.</p>
-        <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
-        <pre><code class="block">&lt;a href="http://w3.org"&gt;    
-&lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C home"</mark>&gt;    
-&lt;/a&gt;  </code>  </pre>
-        <p>Depending on the context in which an image of a logo   is used it could be appropriate to provide an indication, as part of the   text alternative, that the image is a <em>logo</em>. Refer to section on<a href="#logos,-insignia,-flags,-or-emblems"> Logos, insignia, flags, or emblems</a>.</p>
-      </div>
-      <div class="example">
-        <p>In this example, a link contains a print preview icon. The link points to a version of the page with a    print stylesheet applied. The text alternative is a brief description of the link target.</p>
-        <p><img alt="Print preview icon used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/preview.png" height="30" width="32"></p>
-        <pre><code class="block">&lt;a href="preview.html"&gt;    
-&lt;img src="images/preview.png" width="32" height="30" <mark>alt="Print preview."</mark>&gt;    
-&lt;/a&gt;  </code>  </pre>
-      </div>
-      <div class="example">
-        <p>In this example, a button contains a search icon. The button submits a search form. The text alternative is a    brief description of what the button does.</p>
-        <p><img alt="Search icon used as button content." src="http://www.w3.org/html/wg/drafts/html/master/images/search.png" height="29" width="74"></p>
-        <pre><code class="block">&lt;button&gt;    
-&lt;img src="images/search.png" width="74" height="29" <mark>alt="Search"</mark>&gt;    
-&lt;/button&gt;</code>    </pre>
-      </div>
-      <div class="example">
-        <p>In this example, a company logo for the <em>PIP Corporation</em> has been split into the following two images,    the first containing the word <em>PIP</em> and the second with the abbreviated word <em>CO</em>. The images are the    sole content of a link to the <em>PIPCO</em> home page. In this case a brief description of the link target is provided.    As the images are presented to the user as a single entity the text alternative <em>PIP CO home</em> is in the    <code>alt</code> attribute of the first image.</p>
-        <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/html/wg/drafts/html/master/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/html/wg/drafts/html/master/images/co.gif" height="64" width="103"></p>
-        <pre><code class="block">&lt;a href="pipco-home.html"&gt;    
-&lt;img src="pip.gif" <mark>alt="PIP CO home"</mark>&gt;&lt;img src="co.gif" <mark>alt=""</mark>&gt;    
-&lt;/a&gt;    </code></pre>
-      </div>
-      </section>
-      <section>
-      <h3 id="graphical-representations:-charts,-diagrams,-graphs,-maps,-illustrations">Graphical Representations: Charts, diagrams, graphs, maps, illustrations</h3>
-      <p>Readers can benefit when content is presented in graphical form, for example as a flowchart, a diagram, a graph, or a map showing directions.
-	People unable to see the image for any reason will
-	need the information provided in another form.</p>
-      <p>Diagrams often convey a lot of information. This means that
-	a textual alternative may be quite lengthy.  The content of the
-	<code>alt</code> attribute is in general limited to the amount
-	of text that will fit in the space normally occupied by
-	the image.  In addition, it may be tedious for someone
-	listening to an audio rendition of a Web page to have to skip
-	over a lengthy discription each time they reach the diagram.</p>
-      <p>An appropriate technique, then, is to have a short description
-	in the <code>alt</code> attribute, such as
-	<code>bar chart of product sales by region</code>, and
-	to link to a longer image description.</p>
-      <p>An <em>image description</em> in this context is text,
-	whether embedded in the main document or elsewhere, that
-	would enable a reader to have a good idea of what the image
-	looks like. This is different from an
-	<em>alternate representation</em> in that, for example,
-	it might mention that a pie chart is circular or that the
-	items in a bar chart are borizontal rows, and should mention
-	any significant colors. Such a discription can enable people
-	to participate in conversations about the image, or to
-	answer examination questions that might rely on the
-	way the information is represented and not just the underlying
-	data. However, since detailed image descriptions are not
-	usually of interest to people who are able to view the image,
-	and since the descriptions are often supplied by a third party,
-	it is common to store them externally, just as images are
-	usually stored externally to Web pages.</p>
+	<h2 id="scenarios">Common text alternative techniques</h2>
+	<section>
+	<h3 id="a-link-or-button-containing-nothing-but-an-image">A link or button containing nothing but an image</h3>
+	<p>When an <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-a-element">a</a> element that is a <a href="http://www.w3.org/html/wg/drafts/html/master/links.html#hyperlink">hyperlink</a>, or a <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element">button</a> element, has no text content   but contains one or more images, include text in the <code>alt</code> attribute(s) that together convey the purpose of the link or button.</p>
+	 <p><img alt="5 buttons: bold, italic, strike through, bulleted list and numbered list." src="http://www.w3.org/html/wg/drafts/html/master/images/buttons1.png"></p>
+	 <pre>  &lt;ul&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="b.png" <strong>alt="Bold"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="i.png" <strong>alt="Italics"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="strike.png" <strong>alt="Strike through"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="blist.png" <strong>alt="Bulleted list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button&gt;&lt;img src="nlist.png" <strong>alt="Numbered list"</strong>&gt;&lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  </pre>
+	<div class="example">
+	  <p>In this example, a link contains a logo. The link points to the W3C web site <strong>from an external site</strong>. The text alternative is    a brief description of the link target.</p>
+	  <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
+	  <pre><code class="block">&lt;a href="http://w3.org"&gt;    
+  &lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C web site"</mark>&gt;    
+  &lt;/a&gt;    </code></pre>
+	</div>
+	<div class="example">
+	  <p>This example is the same as the previous example, except that the <strong>link is on the W3C web site</strong>. The text alternative is    a brief description of the link target.</p>
+	  <p><abbr title="World Wide Web Consortium"><img alt="W3C logo used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/w3c_home.png" height="48" width="72"></abbr></p>
+	  <pre><code class="block">&lt;a href="http://w3.org"&gt;    
+  &lt;img src="images/w3c_home.png" width="72" height="48" <mark>alt="W3C home"</mark>&gt;    
+  &lt;/a&gt;  </code>  </pre>
+	  <p>Depending on the context in which an image of a logo   is used it could be appropriate to provide an indication, as part of the   text alternative, that the image is a <em>logo</em>. Refer to section on<a href="#logos,-insignia,-flags,-or-emblems"> Logos, insignia, flags, or emblems</a>.</p>
+	</div>
+	<div class="example">
+	  <p>In this example, a link contains a print preview icon. The link points to a version of the page with a    print stylesheet applied. The text alternative is a brief description of the link target.</p>
+	  <p><img alt="Print preview icon used as link content." src="http://www.w3.org/html/wg/drafts/html/master/images/preview.png" height="30" width="32"></p>
+	  <pre><code class="block">&lt;a href="preview.html"&gt;    
+  &lt;img src="images/preview.png" width="32" height="30" <mark>alt="Print preview."</mark>&gt;    
+  &lt;/a&gt;  </code>  </pre>
+	</div>
+	<div class="example">
+	  <p>In this example, a button contains a search icon. The button submits a search form. The text alternative is a    brief description of what the button does.</p>
+	  <p><img alt="Search icon used as button content." src="http://www.w3.org/html/wg/drafts/html/master/images/search.png" height="29" width="74"></p>
+	  <pre><code class="block">&lt;button&gt;    
+  &lt;img src="images/search.png" width="74" height="29" <mark>alt="Search"</mark>&gt;    
+  &lt;/button&gt;</code>    </pre>
+	</div>
+	<div class="example">
+	  <p>In this example, a company logo for the <em>PIP Corporation</em> has been split into the following two images,    the first containing the word <em>PIP</em> and the second with the abbreviated word <em>CO</em>. The images are the    sole content of a link to the <em>PIPCO</em> home page. In this case a brief description of the link target is provided.    As the images are presented to the user as a single entity the text alternative <em>PIP CO home</em> is in the    <code>alt</code> attribute of the first image.</p>
+	  <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/html/wg/drafts/html/master/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/html/wg/drafts/html/master/images/co.gif" height="64" width="103"></p>
+	  <pre><code class="block">&lt;a href="pipco-home.html"&gt;    
+  &lt;img src="pip.gif" <mark>alt="PIP CO home"</mark>&gt;&lt;img src="co.gif" <mark>alt=""</mark>&gt;    
+  &lt;/a&gt;    </code></pre>
+	</div>
+	</section>
+	<section>
+	<h3 id="graphical-representations:-charts,-diagrams,-graphs,-maps,-illustrations">Graphical Representations: Charts, diagrams, graphs, maps, illustrations</h3>
+	<p>Readers can benefit when content is presented in graphical form, for example as a flowchart, a diagram, a graph, or a map showing directions.
+	  People unable to see the image for any reason will
+	  need the information provided in another form.</p>
+	<p>Diagrams often convey a lot of information. This means that
+	  a textual alternative may be quite lengthy.  The content of the
+	  <code>alt</code> attribute is in general limited to the amount
+	  of text that will fit in the space normally occupied by
+	  the image.  In addition, it may be tedious for someone
+	  listening to an audio rendition of a Web page to have to skip
+	  over a lengthy discription each time they reach the diagram.</p>
+	<p>An appropriate technique, then, is to have a short description
+	  in the <code>alt</code> attribute, such as
+	  <code>bar chart of product sales by region</code>, and
+	  to link to a longer image description.</p>
+	<p>An <em>image description</em> in this context is text,
+	  whether embedded in the main document or elsewhere, that
+	  would enable a reader to have a good idea of what the image
+	  looks like. This is different from an
+	  <em>alternate representation</em> in that, for example,
+	  it might mention that a pie chart is circular or that the
+	  items in a bar chart are borizontal rows, and should mention
+	  any significant colors. Such a discription can enable people
+	  to participate in conversations about the image, or to
+	  answer examination questions that might rely on the
+	  way the information is represented and not just the underlying
+	  data. However, since detailed image descriptions are not
+	  usually of interest to people who are able to view the image,
+	  and since the descriptions are often supplied by a third party,
+	  it is common to store them externally, just as images are
+	  usually stored externally to Web pages.</p>
 
     <div class="example" name="castle-digram-id">
       <p>The following example is a diagram of a castle.
@@ -522,8 +538,8 @@ code {color:#900 !important}
 	edges of the printng-block have left visible lines to
 	the left and top of the picture, and, if they are visible,
 	the names of the artist and engraver.</p>
-    </div>
 	
+      <!--* @@ doomed - needs aria described-by *-->
       <h4>Using the alt attribute with an associated text alternative</h4>
       <p>You should supply a text alternative in addition to the alt attribute
 	  in these circumstances:</p>
@@ -539,7 +555,7 @@ code {color:#900 !important}
 	  languages, or is not in the same language as the main document.
 	  Attributes such as alt cannot be marked with xml:lang for
 	  language.</li>
-      </ol>
+      </ul>
       <p>Although the alt attribute is essental to enable someone to understand
 	  which image was not rendered, it should not be relied on to convey
 	  detailed content.</p>
@@ -616,7 +632,8 @@ code {color:#900 !important}
    <p class="note">The table image and data table are grouped using a <a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element"><code>figure</code></a> element
       with an [<a href="#bib-ARIA">ARIA</a>] <a href="http://www.w3.org/TR/wai-aria/roles#group"><code>role=&quot;group&quot;</code></a>. The 
       <code>figure</code> is labelled by the table <code>caption</code> content using <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a>.
-  </div>
+  </p>
+  <p>
   Once <code>figure</code> and <code>figcaption</code> are accessibility supported in browsers, the addition of ARIA attributes will not be required.<p class="note">For any of the examples in this section the <code>details</code> and <code>summary</code> 
   elements could be used so that the text descriptions for the images are only displayed on demand:</p>
   
@@ -721,7 +738,7 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
       <p>In general, an image falls into this category if removing the image doesn't make the page any    less useful, but including the image makes it a lot easier for users of visual browsers to    understand the concept.</p>
       <div class="example">
         <p>It is not always easy to write a useful text alternative for an image, another option is to provide a link to a     description or further information about the image when one is available. </p>
-        <p>In this example of  the same image, there is a short text alternative included in the <code>alt</code> attribute, and     there is a link after the image. The link points to a page containing <a href="http://www.tate.org.uk/servlet/ViewWork?cgroupid=-1&workid=15984">information about the painting</a>. </p>
+        <p>In this example of  the same image, there is a short text alternative included in the <code>alt</code> attribute, and     there is a link after the image. The link points to a page containing <a href="http://www.tate.org.uk/art/artworks/waterhouse-the-lady-of-shalott-n01543">information about the painting</a>. </p>
         <p><strong>The Lady of Shalott</strong><br>
           A poem by Alfred Lord Tennyson.</p>
         <p><img alt="Painting of a woman in a white flowing dress, sitting in a small boat." src="http://www.w3.org/html/wg/drafts/html/master/images/shalott.jpg" height="171" width="271"></p>
