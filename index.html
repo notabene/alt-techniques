@@ -376,11 +376,43 @@
 	  to participate in conversations about the image, or to
 	  answer examination questions that might rely on the
 	  way the information is represented and not just the underlying
-	  data. However, since detailed image descriptions are not
-	  usually of interest to people who are able to view the image,
-	  and since the descriptions are often supplied by a third party,
-	  it is common to store them externally, just as images are
-	  usually stored externally to Web pages.</p>
+	  data.</p>
+
+      <h4>Using the alt attribute with an external image description</h4>
+	<p>An external image description is just another document, normally
+	in HTML, that describes an image.
+	You should consider using an external image description if
+	one of more of the following applies:</p>
+	<ul>
+	  <li>The description would not interest people able
+	  to see the image itself;</li>
+	  <li>The description might be lengthy enough to annoy people
+	  who can see the image, or confuse people reading the page;</li>
+	  <li>The description is provided by a third party, for example
+	  for diagrams in examination questions.</li>
+	</ul>
+
+      <h4>Using the alt attribute with an associated text alternative</h4>
+      <p>A text alternative presents the same essential information
+      as a diagram or illustration but in a text format accessible
+      in cases where the image is not seen or used. It is normally contained
+      in the same document as the image.
+      You should supply a text alternative in addition to the alt attribute
+	  in these circumstances:</p>
+      <ul>
+	  <li>The information takes more than a few words to describe but
+	  is still of use to someone who can see the image.</li>
+	  <li>A user might reasonably want to select the text alternative, or
+	  to find it with a browser search function, regardless of whether
+	  the image is displayed.</li>
+	  <li>The text alternative requires structured markup such as MathML,
+	  tables, emphasis, multiple paragraphs, links, or Japanese ruby annotations.
+	  Attributes such as alt cannot contain elements.</li>
+	  <li>The text alternative is not in the same language
+	  as the main document.
+	  Attributes such as alt cannot be marked with xml:lang for
+	  language.</li>
+      </ul>
 
     <div class="example" name="castle-digram-id">
       <p>The following example is a diagram of a castle.
@@ -1043,13 +1075,11 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
       </DIV>
       <pre class='highlight example'>&lt;img src="example.jpg" <mark>alt="Shadow like figures and a graffiti tag drawn on the walls of a partially
 demolished building, illuminated by the light from a street lamp."</mark>&gt;</pre>
-      <DIV>
-        <p><IMG width="400" height="310" alt="(photo)" src="images/shadows.jpg"></p>
-        <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a <br>
-        partially demolished building, illuminated by the light from a street lamp (photo). </STRONG></p>
-      </DIV>
-      <pre class='highlight example'>&lt;figure&gt;   <BR>&lt;img src="shadows.jpg"&gt;   <BR>&lt;figcaption&gt;<mark> Shadow like figures and a graffiti tag drawn on the walls of a
-partially demolished building, illuminated by the light from a street lamp (photo). </mark>
+      <div>
+        <p><img width="400" height="310" alt="(photo)" src="images/shadows.jpg"></p>
+        <p><strong>Drawings on the walls of a partially demolished building (photo)</strong></p>
+      </div>
+      <pre class='highlight example'>&lt;figure&gt;   <BR>&lt;img src="shadows.jpg"&gt;   <BR>&lt;figcaption&gt;<mark>Drawings on the walls of a partially demolished building (photo). </mark>
 &lt;/figcaption&gt;   <BR>&lt;/figure&gt;</pre>
     </DIV>
     <H5 id="hg">Advantages:</H5>
@@ -1058,7 +1088,7 @@ partially demolished building, illuminated by the light from a street lamp (phot
     </UL>
     <H5 id="hi">Disadvantages:</H5>
     <UL>
-      <LI>The <code>figure</code> and <code>figcaption</code> elements are not currently accessibility supported by the majority of browsers. </LI>
+      <LI>The <code>figure</code> and <code>figcaption</code> elements are not currently accessibility supported by all browsers. </LI>
     </UL>
     <DIV class="example">
       <p>Until the <code>figure</code> and <code>figcaption</code> elements are widely accessibility supported by browsers and/or assistive technology it is recommended that <code>role="group"</code> be used on the <code>figure</code> element and in the case where the <code>figcaption</code> content is the text alternative,  provide a label for the image in the <code>alt</code> attribute. These recommendations are illustrated in following example: </p>
