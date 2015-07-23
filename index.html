@@ -114,7 +114,7 @@
 	The same image may need different
 	<code>alt</code> text in different contexts.
 	The following sections give some principles for writing text alternatives
-	with the <code>alt</code> attribute and suggestwhen to use the <code>longdesc</code>
+	with the <code>alt</code> attribute and suggest when to use the <code>longdesc</code>
 	attribute to provide ore detail; these principles
 	are then illustrated by examples.
 	Additional guidance and techniques are available in <a href="http://www.w3.org/WAI/alt/">Resources on Alternative Text for Images</a>.</p>
@@ -138,7 +138,7 @@
 
 	 <section>
 	   <h4 id="alt-restrict-plaintext">Sub-elements not available in Alternate Text</h4>
-	   <p>Attributes are plain text and connot contain sub-elements.
+	   <p>Attributes are plain text and cannot contain sub-elements.
 	   In particular this also means that fragments of MathML or SVG
 	   cannot be included in an <code>alt</code> attribute value, and
 	   that emphasis cannot be used.</p>
@@ -149,7 +149,7 @@
 	   <p>The value of the <code>alt</code> attribute will generally be
 	     rendered by an HTML user agent as replacement text
 	     in place of a broken or unavailable
-	     image, or if image disaply is disabled, or in a text-mode browser.
+	     image, or if image display is disabled, or in a text-mode browser.
 	     The replacement text will usually be rendered in the space reserved
 	     for the image. If the text does not fit in the available space,
 	     some user agents will truncate the text and others might not
@@ -174,7 +174,7 @@
 	   <p>For visual differentiation, CSS styles such as
 	     <code>color</code> can be applied to the <code>img</code> element.</p>
 
-	   <p>Text that is for use as an alternatve to an image but that
+	   <p>Text that is for use as an alternative to an image but that
 	     contains formatting or markup (such as tables or equations),
 	     needs to be made available separately as described in the next
 	     section,
@@ -243,9 +243,9 @@
 	 <section>
 	   <h4 id="alt-guideline-charts-and-diagrams">Charts and Diagrams</h4>
 	   <p>It is often possible to represent charts, diagrams and other
-	     explanitory sorts of picture using SVG. This does not automatically
-	     make such pictures be accessbible, but different mechanisms then
-	     befomre available for embedding text alternatives in the SVG images.</p>
+	     explanatory sorts of picture using SVG. This does not automatically
+	     make such pictures be accessible, but different mechanisms then
+	     become available for embedding text alternatives in the SVG images.</p>
 	   <p>If SVG is for some reason not used then the same considerations
 	     as for <a href="#alt-guideline-mathematics">images of equations and
 	       tables</a>
@@ -274,7 +274,7 @@
 	   <p>When multiple images are placed together, for
 	     example to make up a frame or border or when a
 	     complex image is split into smaller images, only
-	     the first image should normally have explanitory
+	     the first image should normally have explanatory
 	     text, in order to avoid tedious repetition from
 	     a screen reader.</p>
 	   </section>
@@ -371,7 +371,7 @@
 	  looks like. This is different from an
 	  <em>alternate representation</em> in that, for example,
 	  it might mention that a pie chart is circular or that the
-	  items in a bar chart are borizontal rows, and should mention
+	  items in a bar chart are horizontal rows, and should mention
 	  any significant colors. Such a description can enable people
 	  to participate in conversations about the image, or to
 	  answer examination questions that might rely on the
@@ -420,7 +420,7 @@
 	significance, and hence is a raster image rather than
 	being represented in a vector graphic format such as SVG.
 	As with many diagrams, there are two main parts to this example.
-	The first a picture,
+	The first is a picture,
 	in this case a drawing of a castle.  The second part is a set of
 	labels, identifying some of the components of the castle so that they
 	may more easily be described in the text. In this case the
@@ -490,10 +490,10 @@
 	in the same manner until all of the parts of
 	the castle picture are described.
 	Depending on the context in
-	which the illustation is used the description could also mention
+	which the illustration is used the description could also mention
 	that the diagram is
 	printed with dark brown ink on a yellowish-white paper,
-	and even that the edges of the printng-block have left visible lines to
+	and even that the edges of the printing-block have left visible lines to
 	the left and top of the picture.</p>
       <p>Information that is likely also to be of use (or interest) to people who are able
 	to see the image should normally be in the
@@ -524,7 +524,7 @@
 	  Attributes such as alt cannot be marked with xml:lang for
 	  language.</li>
       </ul>
-      <p>Although the alt attribute is essental to enable someone to understand
+      <p>Although the alt attribute is essential to enable someone to understand
 	  which image was not rendered, it should not be relied on to convey
 	  detailed content.</p>
 
@@ -675,7 +675,7 @@ Pie chart: Language=68%, Education=14%, and Science=18%.&lt;/figcaption&gt;
       <h3 id="images-that-enhance-the-themes-or-subject-matter-of-the-page-content">Images that enhance the themes or subject matter of the page content</h3>
       <p>An image that isn't discussed directly by the surrounding text but still has     some relevance can be included in a page using the <a href="http://www.w3.org/TR/html/embedded-content.html#the-img-element">img</a> element. Such images     are more than mere decoration, they may augment the themes or subject matter of the page     content and so still form part of the content. In these cases, it is recommended that a     text alternative be provided. </p>
       <div class="example">
-        <p>Here is an example of an image closely related to the subject matter of the page content     but not directly discussed. An image of a painting inspired by a poem, on a page reciting that poem.     The following snippet shows an example. The image is a painting titled the "Lady of Shallot", it is     inspired by the poem and its subject matter is derived from the poem. Therefore it is strongly     recommended that a text alternative is provided. There is a short description of the content of     the image in the <a href="http://www.w3.org/TR/html/embedded-content.html#attr-img-alt">alt</a> attribute and    a link below the image to a longer description located at the bottom of the document. At the end     of the longer description there is also a link to further information about the painting.</p>
+        <p>Here is an example of an image closely related to the subject matter of the page content     but not directly discussed. It is an image of a painting inspired by a poem, on a page reciting that poem.     The following snippet shows an example. The image is a painting titled the "Lady of Shallot", it is     inspired by the poem and its subject matter is derived from the poem. Therefore it is strongly     recommended that a text alternative is provided. There is a short description of the content of     the image in the <a href="http://www.w3.org/TR/html/embedded-content.html#attr-img-alt">alt</a> attribute and    a link below the image to a longer description located at the bottom of the document. At the end     of the longer description there is also a link to further information about the painting.</p>
         <p><img alt="A painting inspired by Alfred Tennyson's poem The Lady of Shalott" src="http://www.w3.org/TR/html/images/shalott.jpg" height="234" width="338"></p>
         <pre class='example highlight'>&lt;header&gt;
 &lt;h1&gt;The Lady of Shalott&lt;/h1&gt;
@@ -745,7 +745,7 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
       </section>
       <section>
       <h3 id="inline">Inline images</h3>
-      <p>When images are used inline as part of the flow of text in a sentence, provide a word or phrase as a text     alternative which makes sense in the context of the sentence it is apart of.</p>
+      <p>When images are used inline as part of the flow of text in a sentence, provide a word or phrase as a text     alternative which makes sense in the context of the sentence it is a part of.</p>
       <div class="example">
         <p>I <img alt="love" src="http://www.w3.org/TR/html/images/heart.png" height="24" width="27"> you.</p>
         <pre class='example highlight'>I &lt;img src="heart.png" <mark>alt="love"</mark>&gt; you.</pre>
@@ -756,7 +756,8 @@ Two have blown out.</mark> <mark>&lt;a href="http://bit.ly/5HJvVZ"&gt;Further in
       </section>
       <section>
       <h3 id="a-group-of-images-that-form-a-single-larger-picture-with-no-links">A group of images that form a single larger picture with no links</h3>
-      <p>When a picture has been sliced into smaller image files that are then displayed    together to form the complete picture again, include a text alternative for one    of the images using the <code>alt</code> attribute as per the relevant relevant    guidance for the picture as a whole, and then include an empty <code>alt</code>    attribute on the other images.</p>
+      <p>When a picture has been sliced into smaller image files that are then displayed    together to form the complete picture again, include a text alternative for one    of the images using the <code>alt</code> attribute as per the relevant
+      guidance for the picture as a whole, and then include an empty <code>alt</code>    attribute on the other images.</p>
       <div class="example">
         <p>In this example, a picture representing a company logo for the <em>PIP Corporation</em> has been split into two pieces, the first containing the letters "PIP" and the second with the word "CO".    The text alternative <em>PIP CO</em> is in the <code>alt</code> attribute of the first image.</p>
         <p><img alt="Image containing the text 'PIP'." src="http://www.w3.org/TR/html/images/pip.gif" height="64" width="99"><img alt="Image containing the text 'CO'." src="http://www.w3.org/TR/html/images/co.gif" height="64" width="103"></p>
@@ -941,7 +942,7 @@ for Kingston upon Thames.&lt;/p&gt;    </pre>
 &lt;a href="home.html" id="home"&gt;Home&lt;/a&gt;  </pre>
 </div>
 <div class="example" id="hba" tabindex="-1">
-  <p>In this example, there is a warning message, with a warning icon. The word "Warning!" is in emphasized    text next to the icon. As the information conveyed by the icon is redundant the <a href="http://www.w3.org/TR/html/embedded-content.html#the-img-element">img</a> element is given an an empty <code>alt</code> attribute.</p>
+  <p>In this example, there is a warning message, with a warning icon. The word "Warning!" is in emphasized    text next to the icon. As the information conveyed by the icon is redundant the <a href="http://www.w3.org/TR/html/embedded-content.html#the-img-element">img</a> element is given in an empty <code>alt</code> attribute.</p>
   <p><img alt="Warning!" src="http://www.w3.org/TR/html/images/warning.png" height="34" width="38"><strong>Warning!</strong> Your session is about to expire.</p>
   <pre class='example highlight'>&lt;p&gt;&lt;img src="warning.png" width="15" height="15" <mark>alt=""</mark>&gt;
 &lt;strong&gt;Warning!&lt;/strong&gt; Your session is about to expire&lt;/p&gt;</pre>
@@ -1034,9 +1035,9 @@ prominent on the face of the shield."</mark>&gt;&lt;/p&gt;
         <LI>When an image is used to represent text and it is the author's intent that the purpose of the using an image of text is to achieve a visual style, the <code>alt</code> attribute content <EM title="should">should</EM> be considered as a replacement for the image. </LI>
         <LI>When an image is decorative and it is the author's intent that it not convey any information, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored. </LI>
         <LI>When it is the author's intent that image is not to be seen by users, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored. Refer to</LI>
-        <LI>When an image is immediately proceeded or preceded by a text alternative and the image and the text alternative are not complex in nature, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored.</LI>
+        <LI>When an image is immediately preceded or followed by a text alternative and the image and the text alternative are not complex in nature, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored.</LI>
         <LI>When an image is the sole content of a link, the <code>alt</code> attribute content <EM title="should">should</EM> be a brief description of the link target. </LI>
-        <LI>When an image is the  content of a link and is immediately proceeded or preceded by a brief description of the link target, the <code>alt</code> attribute content <EM title="should">should</EM> be empty. </LI>
+        <LI>When an image is the  content of a link and is immediately preceded or followed by a brief description of the link target, the <code>alt</code> attribute content <EM title="should">should</EM> be empty. </LI>
         <LI>When an image is the  content of a link that also contains structured text content, if the text content is a description of the link target, the <code>alt</code> attribute content <EM title="may">may</EM> be empty or a text alternative for the image. If the text content is not a description of the link target, the <code>alt</code> attribute content <EM title="should">should</EM> be a brief description of the link target.</LI>
       </UL>
    </section>
@@ -1145,13 +1146,13 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
   <p>Gaiji is a term meaning "external characters".  In general, this means characters that are not represented in existing Japanese
   encoding systems such as [[UNICODE]].</p>
   <ul>
-    <li>When gaiji is used as a "hack" to display a character that is adequately represented by a real unicode character, the recommended practice is to remove the gaiji image and just use the unicode character.
+    <li>When gaiji is used as a "hack" to display a character that is adequately represented by a real Unicode character, the recommended practice is to remove the gaiji image and just use the Unicode character.
     </li>
-    <li>When gaiji is used to display a character that is not available in a particular font, the alternative text should be the unicode character.
+    <li>When gaiji is used to display a character that is not available in a particular font, the alternative text should be the Unicode character.
     </li>
     <li>When gaiji is used to represent a graphical image similar to those displaying emoji, use a short description of the image's content (e.g. "thumbs up", "sunrise", or "smiling woman").
     </li>
-    <li>When gaiji is used to represent a new or made-up character that has no unicode representation, use the phonetic hiragana or katakana string to represent the pronunciation of the new or made-up character. </li>
+    <li>When gaiji is used to represent a new or made-up character that has no Unicode representation, use the phonetic hiragana or katakana string to represent the pronunciation of the new or made-up character. </li>
   </ul>
  </section>
 
