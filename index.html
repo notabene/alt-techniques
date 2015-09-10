@@ -94,7 +94,7 @@
 	such as Web search engines and in-page user agent searches.</p>
 	<p>Except where otherwise specified the <code>alt</code> attribute MUST be specified on
 	every <code>img</code> element and MUST NOT be empty.
-	The value should be an appropriate functional replacement for the image.</p>
+	The value SHOULD be an appropriate functional replacement for the image.</p>
     </section>
 
     <section>
@@ -644,9 +644,9 @@
       <section>
       <h3 id="a-purely-decorative-image-that-doesn't-add-any-information">A purely decorative image that doesn't add any information</h3>
       <p>Purely decorative images are visual enhancements, decorations, or embellishments that provide no function or information beyond aesthetics to users who can view the images.</p>
-      <p>Mark purely decorative images so they can be ignored by assistive technology by using an empty <code>alt</code> attribute (<code>alt=""</code>). </p>
+      <p>Mark purely decorative images so they can be ignored by <a>assistive technology</a> by using an <a>empty <code>alt</code> attribute</a> (<code>alt=""</code>). </p>
       <div class="example">
-        <p>Here's an example of an image being used as a decorative banner for a person's blog. The image offers no information and so an empty <code>alt</code> attribute is used.</p>
+	      <p>Here's an example of an image being used as a decorative banner for a person's blog. The image offers no information and so an <a>empty <code>alt</code></a> attribute is used.</p>
         <div>
           <p><img alt="" src="http://www.w3.org/TR/html/images/border.png" height="30" width="400"></p>
           <p><strong>Clara's Blog</strong></p>
@@ -751,7 +751,7 @@ alt="Houses in South Katoomba" href="south.html"&gt;
     <pre class="highlight example">&lt;img src="example.jpg" <mark>alt="text alternative."</mark>&gt;</pre>
     <H5 id="hd">Advantages:</H5>
     <UL>
-      <LI>Robust support in most graphical &amp; non graphical web browsers and assistive technologies.</LI>
+	    <LI>Robust support in most graphical &amp; non graphical web browsers and <a>assistive technologies</a>.</LI>
       <LI>Text alternative is explicitly associated with the image.</LI>
       <LI>Inclusion of text alternatives as <code>alt</code> attribute content does not impact upon the default visual display of content.</LI>
     </UL>
@@ -759,8 +759,8 @@ alt="Houses in South Katoomba" href="south.html"&gt;
     <UL>
       <LI>Content of the <code>alt</code> attribute is not available to some users who may find it useful.</LI>
       <LI>If the <code>alt</code> attribute content is too long it may cause display issues in some browsers.</LI>
-      <LI>If the <code>alt</code> attribute content is too long it may cause reading issues in some assistive technologies.</LI>
-      <LI>The entire contents of the <code>alt</code> attribute are read by assistive technologies
+      <LI>If the <code>alt</code> attribute content is too long it may cause reading issues in some <a>assistive technologies</a>.</LI>
+      <LI>The entire contents of the <code>alt</code> attribute are read by <a>assistive technologies</a>
       every time the image is encountered, with no possibility of skipping and no
       distinction from the surrounding text.</LI>
       <LI>Semantic structure cannot be added to <code>alt</code> attribute content.</LI>
@@ -770,15 +770,15 @@ alt="Houses in South Katoomba" href="south.html"&gt;
       <H4 id="replacement">Is <code>alt</code> attribute content a replacement for an image?</H4>
       <p>The answer to this question depends on the content of the image and the context the image is being used in:</p>
       <UL>
-        <LI>When an image contains too much information to use the <code>alt</code> attribute as a container for a text alternative, the <code>alt</code> attribute content can be a label for the image. This label <EM title="may">may</EM> be a brief description that identifies the image. This <EM title="should">should</EM> be accompanied by a more complete <a>text alternative</a> that is programmatically associated with the image.</LI>
-        <LI>When an image contains structured information that cannot be conveyed using the <code>alt</code> attribute as a container for a text alternative, the <code>alt</code> attribute content <EM title="should">should</EM> be a label for the image. This label <EM title="may">may</EM> be a brief description that identifies the image. This <EM title="should">should</EM> be accompanied by a structured <a>text alternative</a> that is programmatically associated with the image. </LI>
-        <LI>When an image is used to represent text and it is the author's intent that the purpose of using an image of text is to achieve a visual style, the <code>alt</code> attribute content <EM title="should">should</EM> be considered as a replacement for the image. </LI>
-        <LI>When an image is decorative and it is the author's intent that it not convey any information, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored. </LI>
-        <LI>When it is the author's intent that the image is not to be seen by users, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored.</LI>
-        <LI>When an image is immediately preceded or followed by a <a>text alternative</a> and the image and the <a>text alternative</a> are not complex in nature, an empty <code>alt</code> attribute <EM title="should">should</EM> be considered as an indication that the image can be safely ignored.</LI>
-        <LI>When an image is the sole content of a link, the <code>alt</code> attribute content <EM title="should">should</EM> be a brief description of the link target. </LI>
-        <LI>When an image is the  content of a link and is immediately preceded or followed by a brief description of the link target, the <code>alt</code> attribute content <EM title="should">should</EM> be empty. </LI>
-        <LI>When an image is the  content of a link that also contains structured text content, if the text content is a description of the link target, the <code>alt</code> attribute content <EM title="may">may</EM> be empty or a <a>text alternative</a> for the image. If the text content is not a description of the link target, the <code>alt</code> attribute content <EM title="should">should</EM> be a brief description of the link target.</LI>
+        <LI>When an image contains too much information to use the <code>alt</code> attribute as a container for a text alternative, the <code>alt</code> attribute content can be a label for the image. This label MAY be a brief description that identifies the image. This SHOULD be accompanied by a more complete <a>text alternative</a> that is programmatically associated with the image.</LI>
+        <LI>When an image contains structured information that cannot be conveyed using the <code>alt</code> attribute as a container for a text alternative, the <code>alt</code> attribute content SHOULD be a label for the image. This label MAY be a brief description that identifies the image. This SHOULD be accompanied by a structured <a>text alternative</a> that is programmatically associated with the image. </LI>
+        <LI>When an image is used to represent text and it is the author's intent that the purpose of using an image of text is to achieve a visual style, the <code>alt</code> attribute content SHOULD be considered as a replacement for the image. </LI>
+	<LI>When an image is decorative and it is the author's intent that it not convey any information, an <a>empty <code>alt</code> attribute</a> SHOULD be considered as an indication that the image can be safely ignored. </LI>
+	<LI>When it is the author's intent that the image is not to be seen by users, an <a>empty <code>alt</code> attribute</a> SHOULD be considered as an indication that the image can be safely ignored.</LI>
+	<LI>When an image is immediately preceded or followed by a <a>text alternative</a> and the image and the <a>text alternative</a> are not complex in nature, an <a>empty <code>alt</code> attribute</a> SHOULD be considered as an indication that the image can be safely ignored.</LI>
+        <LI>When an image is the sole content of a link, the <code>alt</code> attribute content SHOULD be a brief description of the link target. </LI>
+        <LI>When an image is the  content of a link and is immediately preceded or followed by a brief description of the link target, the <code>alt</code> attribute content SHOULD be empty. </LI>
+        <LI>When an image is the  content of a link that also contains structured text content, if the text content is a description of the link target, the <code>alt</code> attribute content MAY be empty or a <a>text alternative</a> for the image. If the text content is not a description of the link target, the <code>alt</code> attribute content SHOULD be a brief description of the link target.</LI>
       </UL>
    </section>
     <section id="secm3">
@@ -793,9 +793,9 @@ alt="Houses in South Katoomba" href="south.html"&gt;
       </UL>
       <p>Circumstances in which <STRONG>it is not</STRONG> appropriate to use an empty or null <code>alt</code> attribute:</p>
       <UL>
-        <LI>An image is contained within a <code>figure</code> element and has an associated caption provided using the <code>figcaption</code> element. Using an empty <code>alt</code> attribute hides an image from some users. If an image has a caption the image needs to be discoverable by users, otherwise a caption is present that refers to nothing for some users.</LI>
-        <LI>An image contains relevant information not available in the same document as text. Using an empty <code>alt</code> attribute hides an image from some users. In order to have the possibility of interrogating the image, the image must be discoverable.</LI>
-        <LI>An image contains relevant information,  an alternative interpretation of which is available in the same document as structured text. Using an empty <code>alt</code> attribute hides an image from some users, which is incorrect. The image is not meaningless, it  contains information which a range of users could interpret with the  aid of the short <a>text alternative</a> and longer description. It also provides a text  alternative for users who have images turned off in their browsers, so  they can load and view the image if they wish. If an empty <code>alt</code> attribute is present  there may be no indication that an image is present. Furthermore if a description of an image is provided in a document, a <A href="/#hpa">programmatic association</A> between the image and the descriptive text is required. Using an empty <code>alt</code> attribute on the image effectively precludes the assigning of a programmatic association.</LI>
+	      <LI>An image is contained within a <code>figure</code> element and has an associated caption provided using the <code>figcaption</code> element. Using an <a>empty <code>alt</code> attribute</a> hides an image from some users. If an image has a caption the image needs to be discoverable by users, otherwise a caption is present that refers to nothing for some users.</LI>
+	      <LI>An image contains relevant information not available in the same document as text. Using an <a>empty <code>alt</code> attribute</a> hides an image from some users. In order to have the possibility of interrogating the image, the image must be discoverable.</LI>
+	      <LI>An image contains relevant information,  an alternative interpretation of which is available in the same document as structured text. Using an <a>empty <code>alt</code> attribute</a> hides an image from some users, which is incorrect. The image is not meaningless, it  contains information which a range of users could interpret with the  aid of the short <a>text alternative</a> and longer description. It also provides a text  alternative for users who have images turned off in their browsers, so  they can load and view the image if they wish. If an <a>empty <code>alt</code> attribute</a> is present  there may be no indication that an image is present. Furthermore if a description of an image is provided in a document, a <a>programmatic association</a> between the image and the descriptive text is required. Using an <a>empty <code>alt</code> attribute</a> on the image effectively precludes the assigning of a <a>programmatic association</a>.</LI>
       </UL>
  </section>
     <section id="m5">
@@ -825,14 +825,14 @@ demolished building, illuminated by the light from a street lamp."</mark>&gt;</p
     </DIV>
     <H5 id="hg">Advantages:</H5>
     <UL>
-      <LI>When supported by browsers and assistive technology the content of the <code>figcaption</code> will be explicitly associated with the image. </LI>
+	    <LI>When supported by browsers and <a>assistive technology</a> the content of the <code>figcaption</code> will be explicitly associated with the image. </LI>
     </UL>
     <H5 id="hi">Disadvantages:</H5>
     <UL>
       <LI>The <code>figure</code> and <code>figcaption</code> elements are not currently accessibility supported by all browsers. </LI>
     </UL>
     <DIV class="example">
-      <p>Until the <code>figure</code> and <code>figcaption</code> elements are widely accessibility supported by browsers and/or assistive technology it is recommended that <code>role="group"</code> be used on the <code>figure</code> element and in the case where the <code>figcaption</code> content is the text alternative,  provide a label for the image in the <code>alt</code> attribute. These recommendations are illustrated in following example: </p>
+	    <p>Until the <code>figure</code> and <code>figcaption</code> elements are widely accessibility supported by browsers and/or <a>assistive technology</a> it is recommended that <code>role="group"</code> be used on the <code>figure</code> element and in the case where the <code>figcaption</code> content is the text alternative,  provide a label for the image in the <code>alt</code> attribute. These recommendations are illustrated in following example: </p>
       <DIV>
         <p><IMG width="400" height="310" alt="(photo 1)" src="images/shadows.jpg"></p>
         <p><STRONG>Shadow like figures and a graffiti tag drawn on the walls of a <br>
@@ -895,30 +895,32 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
     <li>When gaiji is used to represent a new or made-up character that has no Unicode representation, use the phonetic hiragana or katakana string to represent the pronunciation of the new or made-up character. </li>
   </ul>
  </section>
+ </section>
+ </section>
 
-<section>
+<section class='appendix'>
 <h2 id="glossary">Glossary</h2>
-<h3 id="api">Accessibility <abbr title="Application Programming Interface">API</abbr></h3>
+<h3 id="api"><dfn data-lt-noDefault="true" data-lt="API|Accessibility API">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></h3>
 <p>Operating systems and other platforms provide a set of interfaces using an <dfn>accessibility API</dfn> that expose information about <a href="http://www.w3.org/TR/wai-aria/terms#def_object">objects</a> and <a href="http://www.w3.org/TR/wai-aria/terms#def_event">events</a> to <A href="http://www.w3.org/TR/wai-aria/terms#def_at">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <A href="http://www.w3.org/TR/wai-aria/terms#def_widget">widgets</a>. Examples of this are the <A href="http://java.sun.com/javase/technologies/accessibility/index.jsp">Java Accessibility <ABBR title="Application Programming Interface">API</abbr></a> [<a href="http://www.w3.org/TR/wai-aria/references#ref_JAPI">JAPI</a>], <A href="http://msdn.microsoft.com/en-us/library/ms697270%28VS.85%29.aspx">Microsoft Active Accessibility</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_MSAA">MSAA</a>], <A href="http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Accessibility/cocoaAXIntro/cocoaAXintro.html">the Mac <ABBR title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_AXAPI">AXAPI</a>], the <A href="http://library.gnome.org/devel/atk/">Gnome Accessibility Toolkit (ATK)</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_ATK">ATK</a>], and <A href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2</a> [<A href="http://www.w3.org/TR/wai-aria/references#ref_IA2">IA2</a>]. </p>
-<h3 id="acc_name">Accessible name</h3>
+<h3 id="acc_name"><dfn>Accessible Name</dfn></h3>
 <p>The <dfn>accessible name</dfn> is the name of a user interface element. Each platform <a>accessibility API</a> provides the accessible name property. The value of the accessible name   may be derived from a visible (e.g., the visible text on a button) or   invisible (e.g., the <a>text alternative</a> that describes an icon) property   of the user interface element.</p>
-<h3 id="hbp">alt text</h3>
+<h3 id="hbp"><dfn>alt text</dfn></h3>
 <p><dfn>Alt text</dfn> is a colloquial term for a <a>text alternative</a> provided  using the <code>alt</code> attribute of an img element.</p>
-<h3 id="hbq">assistive technology</h3>
-<p>An <dfn>assistive technology</dfn> is a hardware and/or software that acts as a user agent, or along with a mainstream user agent, to provide functionality to meet the requirements of users with disabilities that go beyond those offered by mainstream user agents. A more <a href="http://www.w3.org/TR/WCAG20/#atdef">detailed explanation of assistive technology</a> is provided in the WCAG 2.0 glossary. [[WCAG20]]</p>
-<h3 id="hbr">content (Web content)</h3>
+<h3 id="hbq"><dfn data-lt="assistive technologies">Assistive Technology</dfn></h3>
+<p>An assistive technology is a hardware and/or software that acts as a user agent, or along with a mainstream user agent, to provide functionality to meet the requirements of users with disabilities that go beyond those offered by mainstream user agents. A more <a href="http://www.w3.org/TR/WCAG20/#atdef">detailed explanation of assistive technology</a> is provided in the WCAG 2.0 glossary. [[WCAG20]]</p>
+<h3 id="hbr"><dfn data-lt-noDefault="true" data-lt="content|web content">Content (Web Content)</dfn></h3>
 <p>Information and sensory experience to be communicated to the user by means of a user agent such as a web browser, including code or markup that defines the content's structure, presentation, and interactions. </p>
-<h3 id="hpa">programmatic association</h3>
-<p>It must  be possible for people using assistive technologies to find   the <a>text alternative</a> for an image when they encounter the image that they cannot   use. To accomplish this,  the text must be "programmatically associated" with the image and is referenced as <dfn>programmatic association</dfn>. This means that the user must be able to   use their assistive technology to find the alternative text (that they can use)   when they land on the image (that they can't use).</p>
-<h3 id="hbs">non-text content</h3>
-<p>A <dfn><a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a></dfn> is any content that is not a sequence of characters that can be programmatically determined or where the sequence is not expressing something in human language </p>
-<p>Note: This includes ASCII Art (which is a pattern of characters), emoticons, leetspeak (which uses character substitution), and images representing text. </p>
-<h3 id="hbt">Empty <code>alt</code> attribute or null <code>alt</code> attribute.</h3>
+<h3 id="hbt"><dfn data-lt-noDefault="true" data-lt="empty alt attribute|null alt attribute">Empty <code>alt</code> Attribute or Null <code>alt</code> Attribute</dfn></h3>
 <p>An <code>alt</code> attribute with no content:</p>
 <pre class='example highlight'>
 &lt;img src="null.gif" <mark>alt=""</mark>&gt;
 </pre>
-<h3 id="hbu"><dfn data-lt="text alternatives">Text alternative</dfn></h3>
+<h3 id="hbs"><dfn>Non-text Content</dfn></h3>
+<p>A <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a> is any content that is not a sequence of characters that can be programmatically determined or where the sequence is not expressing something in human language </p>
+<p>Note: This includes ASCII Art (which is a pattern of characters), emoticons, leetspeak (which uses character substitution), and images representing text. </p>
+<h3 id="hpa"><dfn>Programmatic Association</dfn></h3>
+<p>It must  be possible for people using <a>assistive technologies</a> to find   the <a>text alternative</a> for an image when they encounter the image that they cannot   use. To accomplish this,  the text must be "programmatically associated" with the image and is referenced as <a>programmatic association</a>. This means that the user must be able to   use their <a>assistive technology</a> to find the alternative text (that they can use)   when they land on the image (that they can't use).</p>
+<h3 id="hbu"><dfn data-lt="text alternatives">Text Alternative</dfn></h3>
 <p><dfn><a href="http://www.w3.org/TR/WCAG20/#textdef">Text</a></dfn> that is   programmatically associated with <a>non-text content</a> or referred to from text that is programmatically associated with non-text content. Programmatically associated text is text whose location can be <dfn><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-programmatically-determined-head">programmatically determined</a></dfn> from the non-text content. [[UNDERSTANDING-WCAG20]]</p>
 </section>
       <section class='appendix'>
@@ -926,7 +928,5 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
       <p>
       <em>Incomplete and in no particular order</em> - Heydon Pickering, David MacDonald, Laura Carlson, Josh O Connor, Gez Lemon, Anne van Kesteren, Ian Hickson, Mike Smith, Mike Paciello, Bim Egan, Gregory Rosmaita, Michael Cooper, Janina Sajka, Matt May, Bevi Chagnon, Jonathan Avila, Pat Rees, Charlie Pike, Andy Maseyk, Rich Clark. </p>
     </section>
-</section>
-</section>
   </body>
 </html>
